@@ -1,10 +1,10 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-import usePageMeta from '../hooks/usePageMeta';
-import PageHeader from '../components/PageHeader';
-import AnimatedSection from '../components/AnimatedSection';
-import SectionTitle from '../components/SectionTitle';
-import { CheckCircleIcon } from '../components/Icons';
+import { usePageMeta } from '../lib/seo.tsx';
+import PageHeader from '../components/PageHeader.tsx';
+import AnimatedSection from '../components/AnimatedSection.tsx';
+import SectionTitle from '../components/SectionTitle.tsx';
+import { CheckCircleIcon } from '../components/Icons.tsx';
 
 const CANDIDATE_COMMITMENTS = [
   {

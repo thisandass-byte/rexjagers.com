@@ -1,13 +1,13 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import { motion } from 'framer-motion';
-import { INSIGHTS_ARTICLES } from '../constants';
-import usePageMeta from '../hooks/usePageMeta';
-import PageHeader from '../components/PageHeader';
-import AnimatedSection from '../components/AnimatedSection';
-import SectionTitle from '../components/SectionTitle';
-import GatedContent from '../components/GatedContent';
-import type { InsightArticle } from '../types';
+import { INSIGHTS_ARTICLES } from '../lib/schema.ts';
+import { usePageMeta } from '../lib/seo.tsx';
+import PageHeader from '../components/PageHeader.tsx';
+import AnimatedSection from '../components/AnimatedSection.tsx';
+import SectionTitle from '../components/SectionTitle.tsx';
+import LeadForm from '../components/LeadForm.tsx';
+import type { InsightArticle } from '../lib/schema.ts';
 
 const ArticleCard: React.FC<{ article: InsightArticle }> = ({ article }) => (
     <motion.div
@@ -74,11 +74,7 @@ const Insights: React.FC = () => {
                 </div>
             </AnimatedSection>
 
-            <AnimatedSection className="py-20 md:py-28 bg-light-slate dark:bg-dark-bg-section">
-                <div className="container mx-auto px-6">
-                    <GatedContent />
-                </div>
-            </AnimatedSection>
+            <LeadForm />
         </div>
     );
 };

@@ -1,14 +1,11 @@
-
-
-
 import React from 'react';
 import { motion } from 'framer-motion';
-import { TEAM_MEMBERS } from '../constants';
-import usePageMeta from '../hooks/usePageMeta';
-import PageHeader from '../components/PageHeader';
-import AnimatedSection from '../components/AnimatedSection';
-import SectionTitle from '../components/SectionTitle';
-import { LinkedinIcon, FocusIcon, HandshakeIcon, GlobeIcon, DiversityIcon } from '../components/Icons';
+import { TEAM_MEMBERS } from '../lib/schema.ts';
+import { usePageMeta } from '../lib/seo.tsx';
+import PageHeader from '../components/PageHeader.tsx';
+import AnimatedSection from '../components/AnimatedSection.tsx';
+import SectionTitle from '../components/SectionTitle.tsx';
+import { LinkedinIcon, FocusIcon, HandshakeIcon, GlobeIcon, DiversityIcon } from '../components/Icons.tsx';
 
 const WHY_CHOOSE_US = [
   {

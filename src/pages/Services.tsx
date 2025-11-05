@@ -1,12 +1,12 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import { motion } from 'framer-motion';
-import { SERVICES } from '../constants';
-import usePageMeta from '../hooks/usePageMeta';
-import PageHeader from '../components/PageHeader';
-import AnimatedSection from '../components/AnimatedSection';
-import SectionTitle from '../components/SectionTitle';
-import ProcessStepper from '../components/ProcessStepper';
+import { SERVICES } from '../lib/schema.ts';
+import { usePageMeta } from '../lib/seo.tsx';
+import PageHeader from '../components/PageHeader.tsx';
+import AnimatedSection from '../components/AnimatedSection.tsx';
+import SectionTitle from '../components/SectionTitle.tsx';
+import ProcessStepper from '../components/ProcessStepper.tsx';
 
 
 const Services: React.FC = () => {
