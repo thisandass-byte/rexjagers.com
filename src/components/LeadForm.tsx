@@ -20,7 +20,7 @@ const LeadForm: React.FC = () => {
     return (
         <AnimatedSection className="py-20 md:py-28 bg-light-slate dark:bg-dark-bg-section">
             <div className="container mx-auto px-6">
-                <div className="bg-light-slate dark:bg-dark-bg-section p-8 md:p-12 rounded-lg border border-navy/15 dark:border-slate/30 shadow-lg text-center relative overflow-hidden">
+                <div className="bg-white dark:bg-navy p-8 md:p-12 rounded-lg border border-navy/15 dark:border-slate/30 shadow-lg text-center relative overflow-hidden">
                     {status === 'success' ? (
                         <motion.div
                             className="text-center"
@@ -30,12 +30,12 @@ const LeadForm: React.FC = () => {
                         >
                             <CheckCircleIcon className="w-16 h-16 text-gold mx-auto mb-4" />
                             <h3 className="text-2xl font-bold text-navy dark:text-white mb-2">Thank You!</h3>
-                            <p className="text-navy/75 dark:text-slate">Your download is on its way. Check your inbox for our latest white paper.</p>
+                            <p className="text-gray-700 dark:text-slate-light">Your download is on its way. Check your inbox for our latest white paper.</p>
                         </motion.div>
                     ) : (
                         <>
                             <SectionTitle>Get Our Latest White Paper</SectionTitle>
-                            <p className="mt-4 max-w-2xl mx-auto text-navy/75 dark:text-slate mb-8">
+                            <p className="mt-4 max-w-2xl mx-auto mb-8 text-gray-700 dark:text-slate-light">
                                 "The Future of Leadership: Navigating the C-Suite in the AI Era"
                             </p>
                             <form onSubmit={handleSubmit} className="flex flex-col sm:flex-row justify-center items-center gap-4 max-w-lg mx-auto">
@@ -48,7 +48,7 @@ const LeadForm: React.FC = () => {
                                     onChange={(e) => setEmail(e.target.value)}
                                     required
                                     placeholder="Enter your email address"
-                                    className="flex-grow w-full bg-white dark:bg-navy border border-slate/50 dark:border-slate/50 rounded-md py-3 px-4 text-navy dark:text-white focus:outline-none focus:border-gold focus:ring-2 focus:ring-gold focus:ring-offset-2 focus:ring-offset-light-slate dark:focus:ring-offset-dark-bg-section transition-all duration-300"
+                                    className="flex-grow w-full bg-white dark:bg-navy border border-slate/50 dark:border-slate/50 rounded-md py-3 px-4 text-navy dark:text-white placeholder:text-gray-500 dark:placeholder:text-gray-400 focus:outline-none focus:border-gold focus:ring-2 focus:ring-gold focus:ring-offset-2 focus:ring-offset-light-slate dark:focus:ring-offset-dark-bg-section transition-all duration-300"
                                     disabled={status === 'submitting'}
                                 />
                                 <button

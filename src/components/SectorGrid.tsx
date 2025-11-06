@@ -23,7 +23,7 @@ const SectorGrid: React.FC = () => {
         <div className="container mx-auto px-6">
           <div className="text-center mb-12">
             <SectionTitle>Industry Expertise</SectionTitle>
-            <p className="mt-4 max-w-2xl mx-auto text-navy/75 dark:text-slate">Deep domain knowledge across primary verticals to ensure we understand your unique challenges.</p>
+            <p className="mt-4 max-w-2xl mx-auto text-gray-700 dark:text-slate-light">Deep domain knowledge across primary verticals to ensure we understand your unique challenges.</p>
           </div>
           <motion.div
             className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8"

@@ -3,7 +3,7 @@ import { Link } from 'react-router-dom';
 import { motion } from 'framer-motion';
 import { SERVICES } from '../lib/schema.ts';
 import { ChevronRightIcon } from '../components/Icons.tsx';
-import { usePageMeta } from '../lib/seo.tsx';
+import { useSEO } from '../lib/seo.tsx';
 import AnimatedSection from '../components/AnimatedSection.tsx';
 import SectionTitle from '../components/SectionTitle.tsx';
 import Hero from '../components/Hero.tsx';
@@ -12,10 +12,10 @@ import TestimonialCarousel from '../components/TestimonialCarousel.tsx';
 import LeadForm from '../components/LeadForm.tsx';
 
 const Home: React.FC = () => {
-  usePageMeta(
-    'RexJagers | Premier Executive Search & Leadership Recruitment',
-    'RexJagers is a top-tier executive search firm in India, specializing in CXO and leadership hiring for IT, Banking, Healthcare, Manufacturing, and Engineering sectors.'
-  );
+  useSEO({
+    title: 'RexJagers | Premier Executive Search & Leadership Recruitment',
+    description: 'RexJagers is a top-tier executive search firm in India, specializing in CXO and leadership hiring for IT, Banking, Healthcare, Manufacturing, and Engineering sectors.'
+  });
 
   const listVariants = {
     visible: {
@@ -38,7 +38,7 @@ const Home: React.FC = () => {
       <AnimatedSection className="py-20 md:py-28 bg-white dark:bg-navy">
         <div className="container mx-auto px-6 text-center">
             <SectionTitle>Defining the Future of Executive Talent</SectionTitle>
-            <p className="max-w-3xl mx-auto text-navy/75 dark:text-slate mb-8 mt-4">
+            <p className="max-w-3xl mx-auto mb-8 mt-4 text-gray-700 dark:text-slate">
                 At RexJagers, we believe that the right leadership is the most critical catalyst for an organization's success. With a bespoke, research-driven approach, we connect our clients with the top 1% of talent, ensuring a perfect alignment of vision, culture, and expertise.
             </p>
             <Link to="/about" className="text-gold font-semibold text-lg hover:underline group flex items-center justify-center rounded-md focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-gold">
@@ -52,7 +52,7 @@ const Home: React.FC = () => {
         <div className="container mx-auto px-6">
           <div className="text-center mb-12">
             <SectionTitle>Our Signature Services</SectionTitle>
-            <p className="mt-4 max-w-2xl mx-auto text-navy/75 dark:text-slate">A comprehensive suite of solutions designed to build and strengthen your leadership foundation.</p>
+            <p className="mt-4 max-w-2xl mx-auto text-gray-700 dark:text-slate">A comprehensive suite of solutions designed to build and strengthen your leadership foundation.</p>
           </div>
           <motion.div
             className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8"
@@ -67,7 +67,7 @@ const Home: React.FC = () => {
                 <div className="relative">
                   <service.icon className="h-10 w-10 text-gold mb-4" />
                   <h3 className="text-xl font-bold text-navy dark:text-white mb-2">{service.title}</h3>
-                  <p className="text-navy/75 dark:text-slate">{service.description}</p>
+                  <p className="text-gray-700 dark:text-slate-light">{service.description}</p>
                 </div>
               </motion.div>
             ))}

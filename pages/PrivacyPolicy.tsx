@@ -11,7 +11,7 @@ const PrivacyPolicy: React.FC = () => {
     );
 
     return (
-        <div className="text-navy/75 dark:text-slate">
+        <div className="dark:text-slate">
             <PageHeader
                 title="Privacy Policy"
                 subtitle="Your trust and confidentiality are paramount to us."

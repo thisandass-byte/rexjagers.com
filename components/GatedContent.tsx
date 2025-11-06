@@ -27,12 +27,12 @@ const GatedContent: React.FC = () => {
                 >
                     <CheckCircleIcon className="w-16 h-16 text-gold mx-auto mb-4" />
                     <h3 className="text-2xl font-bold text-navy dark:text-white mb-2">Thank You!</h3>
-                    <p className="text-navy/75 dark:text-slate">Your download is on its way. Check your inbox for our latest white paper.</p>
+                    <p className="dark:text-slate">Your download is on its way. Check your inbox for our latest white paper.</p>
                 </motion.div>
             ) : (
                 <>
                     <SectionTitle>Get Our Latest White Paper</SectionTitle>
-                    <p className="mt-4 max-w-2xl mx-auto text-navy/75 dark:text-slate mb-8">
+                    <p className="mt-4 max-w-2xl mx-auto dark:text-slate mb-8">
                         "The Future of Leadership: Navigating the C-Suite in the AI Era"
                     </p>
                     <form onSubmit={handleSubmit} className="flex flex-col sm:flex-row justify-center items-center gap-4 max-w-lg mx-auto">

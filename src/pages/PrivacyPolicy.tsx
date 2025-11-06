@@ -1,26 +1,30 @@
 import React from 'react';
-import { usePageMeta } from '../lib/seo.tsx';
+import { useSEO } from '../lib/seo.tsx';
 import PageHeader from '../components/PageHeader.tsx';
 import AnimatedSection from '../components/AnimatedSection.tsx';
 import SectionTitle from '../components/SectionTitle.tsx';
 
 const PrivacyPolicy: React.FC = () => {
-    usePageMeta(
-        'Privacy Policy | RexJagers Executive Search',
-        'Read the privacy policy for RexJagers, outlining how we collect, use, and protect your personal and professional data.'
-    );
+    const pageHeaderData = {
+        title: "Privacy Policy",
+        subtitle: "Your trust and confidentiality are paramount to us.",
+        imageUrl: "https://images.pexels.com/photos/220301/pexels-photo-220301.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2",
+        imageAlt: "A key and lock symbolizing security and privacy"
+    };
+
+    useSEO({
+        title: 'Privacy Policy | RexJagers Executive Search',
+        description: 'Read the privacy policy for RexJagers, outlining how we collect, use, and protect your personal and professional data.',
+        imageUrl: pageHeaderData.imageUrl,
+        imageAlt: pageHeaderData.imageAlt
+    });
 
     return (
-        <div className="text-navy/75 dark:text-slate">
-            <PageHeader
-                title="Privacy Policy"
-                subtitle="Your trust and confidentiality are paramount to us."
-                imageUrl="https://images.pexels.com/photos/220301/pexels-photo-220301.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2"
-                imageAlt="A key and lock symbolizing security and privacy"
-            />
+        <div>
+            <PageHeader {...pageHeaderData} />
 
             <AnimatedSection className="py-20 md:py-28">
-                <div className="container mx-auto px-6 max-w-4xl space-y-6 leading-relaxed">
+                <div className="container mx-auto px-6 max-w-4xl space-y-6 leading-relaxed text-gray-700 dark:text-slate-light">
                     <div>
                         <SectionTitle>Introduction</SectionTitle>
                         <p className="mt-4">

@@ -1,6 +1,7 @@
 
 
 
+
 import React from 'react';
 import { motion } from 'framer-motion';
 import { TEAM_MEMBERS } from '../constants';
@@ -53,7 +54,7 @@ const About: React.FC = () => {
   };
 
   return (
-    <div className="text-navy/75 dark:text-slate">
+    <div className="dark:text-slate">
       <PageHeader
         title="About RexJagers"
         subtitle="Connecting vision with leadership to shape the future of industries."
@@ -66,11 +67,11 @@ const About: React.FC = () => {
         <div className="container mx-auto px-6 grid md:grid-cols-2 gap-12 items-center">
           <div>
             <SectionTitle>Our Mission</SectionTitle>
-            <p className="text-navy/75 dark:text-slate mb-6 mt-4">
+            <p className="dark:text-slate mb-6 mt-4">
               To serve as a trusted advisor to our clients, delivering transformative talent that creates lasting value and competitive advantage. We are committed to a process that is rigorous, transparent, and tailored to the unique needs of every organization we partner with.
             </p>
             <SectionTitle>Our Vision</SectionTitle>
-            <p className="text-navy/75 dark:text-slate mt-4">
+            <p className="dark:text-slate mt-4">
               To be India’s most respected executive search firm, renowned for our deep industry expertise, unwavering integrity, and our pivotal role in shaping the leadership landscape of tomorrow.
             </p>
           </div>
@@ -84,7 +85,7 @@ const About: React.FC = () => {
        <AnimatedSection className="py-20 md:py-28 bg-light-slate dark:bg-dark-bg-section">
         <div className="container mx-auto px-6 text-center">
             <SectionTitle>The RexJagers Difference</SectionTitle>
-            <p className="max-w-3xl mx-auto text-navy/75 dark:text-slate mb-12 mt-4">
+            <p className="max-w-3xl mx-auto dark:text-slate mb-12 mt-4">
                Our methodology is built on a foundation of deep partnership and precision. We invest time to understand your strategic objectives, company culture, and the specific challenges of a role.
             </p>
             <motion.div 
@@ -96,15 +97,15 @@ const About: React.FC = () => {
             >
                 <motion.div variants={itemVariants} className="bg-white dark:bg-navy p-6 rounded-lg border border-navy/15 dark:border-slate/30 shadow-sm transition-all duration-300 hover:-translate-y-1 hover:box-shadow-gold">
                     <h3 className="text-xl font-bold text-gold mb-2">Partner-Led Engagement</h3>
-                    <p className="text-navy/75 dark:text-slate text-sm">Every search is led by a senior partner, ensuring you benefit from our deepest experience and accountability from start to finish.</p>
+                    <p className="dark:text-slate text-sm">Every search is led by a senior partner, ensuring you benefit from our deepest experience and accountability from start to finish.</p>
                 </motion.div>
                 <motion.div variants={itemVariants} className="bg-white dark:bg-navy p-6 rounded-lg border border-navy/15 dark:border-slate/30 shadow-sm transition-all duration-300 hover:-translate-y-1 hover:box-shadow-gold">
                     <h3 className="text-xl font-bold text-gold mb-2">Research-Driven Insight</h3>
-                    <p className="text-navy/75 dark:text-slate text-sm">We combine proprietary data with rigorous, real-time market research to identify and engage candidates who are not actively seeking new roles.</p>
+                    <p className="dark:text-slate text-sm">We combine proprietary data with rigorous, real-time market research to identify and engage candidates who are not actively seeking new roles.</p>
                 </motion.div>
                 <motion.div variants={itemVariants} className="bg-white dark:bg-navy p-6 rounded-lg border border-navy/15 dark:border-slate/30 shadow-sm transition-all duration-300 hover:-translate-y-1 hover:box-shadow-gold">
                     <h3 className="text-xl font-bold text-gold mb-2">Holistic Assessment</h3>
-                    <p className="text-navy/75 dark:text-slate text-sm">Our evaluation goes beyond the resume. We assess for cultural fit, leadership competencies, and long-term potential to ensure a successful placement.</p>
+                    <p className="dark:text-slate text-sm">Our evaluation goes beyond the resume. We assess for cultural fit, leadership competencies, and long-term potential to ensure a successful placement.</p>
                 </motion.div>
             </motion.div>
         </div>
@@ -114,7 +115,7 @@ const About: React.FC = () => {
       <AnimatedSection className="py-20 md:py-28">
         <div className="container mx-auto px-6 text-center">
             <SectionTitle>Why Choose RexJagers?</SectionTitle>
-            <p className="max-w-3xl mx-auto text-navy/75 dark:text-slate mb-12 mt-4">
+            <p className="max-w-3xl mx-auto dark:text-slate mb-12 mt-4">
               In a competitive landscape, our clients choose us for our unparalleled commitment, deep market insight, and proven results. Here’s what sets us apart:
             </p>
             <motion.div
@@ -131,7 +132,7 @@ const About: React.FC = () => {
                   </div>
                   <div>
                     <h3 className="text-xl font-bold mb-2">{item.title}</h3>
-                    <p className="text-navy/75 dark:text-slate">{item.description}</p>
+                    <p className="dark:text-slate">{item.description}</p>
                   </div>
                 </motion.div>
               ))}
@@ -143,7 +144,7 @@ const About: React.FC = () => {
       <AnimatedSection className="py-20 md:py-28 bg-light-slate dark:bg-dark-bg-section">
         <div className="container mx-auto px-6 text-center">
             <SectionTitle>Our Core Values</SectionTitle>
-            <p className="max-w-3xl mx-auto text-navy/75 dark:text-slate mb-12 mt-4">
+            <p className="max-w-3xl mx-auto dark:text-slate mb-12 mt-4">
                The principles that guide every action, decision, and partnership we undertake.
             </p>
             <motion.div
@@ -155,19 +156,19 @@ const About: React.FC = () => {
             >
                 <motion.div variants={itemVariants} className="bg-white dark:bg-navy p-6 rounded-lg border border-navy/15 dark:border-slate/30 shadow-sm transition-all duration-300 hover:-translate-y-1 hover:box-shadow-gold">
                     <h3 className="text-xl font-bold text-gold mb-2">Integrity</h3>
-                    <p className="text-navy/75 dark:text-slate text-sm">We operate with unwavering honesty, transparency, and ethical standards, building relationships founded on trust.</p>
+                    <p className="dark:text-slate text-sm">We operate with unwavering honesty, transparency, and ethical standards, building relationships founded on trust.</p>
                 </motion.div>
                 <motion.div variants={itemVariants} className="bg-white dark:bg-navy p-6 rounded-lg border border-navy/15 dark:border-slate/30 shadow-sm transition-all duration-300 hover:-translate-y-1 hover:box-shadow-gold">
                     <h3 className="text-xl font-bold text-gold mb-2">Excellence</h3>
-                    <p className="text-navy/75 dark:text-slate text-sm">We are relentless in our pursuit of quality, delivering exceptional results and exceeding expectations in every search.</p>
+                    <p className="dark:text-slate text-sm">We are relentless in our pursuit of quality, delivering exceptional results and exceeding expectations in every search.</p>
                 </motion.div>
                 <motion.div variants={itemVariants} className="bg-white dark:bg-navy p-6 rounded-lg border border-navy/15 dark:border-slate/30 shadow-sm transition-all duration-300 hover:-translate-y-1 hover:box-shadow-gold">
                     <h3 className="text-xl font-bold text-gold mb-2">Partnership</h3>
-                    <p className="text-navy/75 dark:text-slate text-sm">We function as a seamless extension of our clients' teams, fostering collaborative relationships to achieve shared goals.</p>
+                    <p className="dark:text-slate text-sm">We function as a seamless extension of our clients' teams, fostering collaborative relationships to achieve shared goals.</p>
                 </motion.div>
                 <motion.div variants={itemVariants} className="bg-white dark:bg-navy p-6 rounded-lg border border-navy/15 dark:border-slate/30 shadow-sm transition-all duration-300 hover:-translate-y-1 hover:box-shadow-gold">
                     <h3 className="text-xl font-bold text-gold mb-2">Discretion</h3>
-                    <p className="text-navy/75 dark:text-slate text-sm">We handle every engagement with the utmost confidentiality, respecting the sensitivity of our work for clients and candidates.</p>
+                    <p className="dark:text-slate text-sm">We handle every engagement with the utmost confidentiality, respecting the sensitivity of our work for clients and candidates.</p>
                 </motion.div>
             </motion.div>
         </div>
@@ -178,7 +179,7 @@ const About: React.FC = () => {
         <div className="container mx-auto px-6">
           <div className="text-center mb-12">
             <SectionTitle>Meet Our Leadership</SectionTitle>
-            <p className="mt-4 max-w-2xl mx-auto text-navy/75 dark:text-slate">A team of seasoned professionals dedicated to your success.</p>
+            <p className="mt-4 max-w-2xl mx-auto dark:text-slate">A team of seasoned professionals dedicated to your success.</p>
           </div>
           <motion.div 
             className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8"
@@ -206,7 +207,7 @@ const About: React.FC = () => {
                 <div className="p-6">
                   <h3 className="text-xl font-bold">{member.name}</h3>
                   <p className="text-gold mb-4">{member.title}</p>
-                  <p className="text-navy/75 dark:text-slate text-sm">{member.bio}</p>
+                  <p className="dark:text-slate text-sm">{member.bio}</p>
                 </div>
               </motion.div>
             ))}

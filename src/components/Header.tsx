@@ -44,10 +44,10 @@ const Header: React.FC = () => {
   const onHomepageTop = location.pathname === '/' && isTransparent;
 
   const linkColorClasses = onHomepageTop
-    ? 'text-navy text-glow-white' // Special style for homepage top
+    ? 'text-white text-glow-white'
     : isTransparent
-    ? 'text-white text-shadow-subtle' // Default for transparent (other pages)
-    : 'text-navy dark:text-white'; // For scrolled state
+    ? 'text-white text-shadow-subtle'
+    : 'text-navy dark:text-white';
   
   // Animation Variants
   const navContainerVariants = {
@@ -75,12 +75,14 @@ const Header: React.FC = () => {
 
   const mobileMenuVariants: Variants = {
     hidden: { 
-      x: '-100%', 
-      transition: { duration: 0.3, ease: 'easeInOut' } 
+      x: '-100%',
+      opacity: 0,
+      transition: { type: 'spring', stiffness: 400, damping: 40 }
     },
     visible: { 
-      x: 0, 
-      transition: { duration: 0.3, ease: 'easeInOut' } 
+      x: 0,
+      opacity: 1,
+      transition: { type: 'spring', stiffness: 400, damping: 40 }
     },
   };
   
@@ -120,7 +122,7 @@ const Header: React.FC = () => {
       >
         <div>
           <Link to="/" className="inline-block rounded-md focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-gold focus-visible:ring-offset-2 focus-visible:ring-offset-white dark:focus-visible:ring-offset-navy" aria-label="RexJagers Home">
-            <Logo variant={isTransparent ? 'inverse' : 'default'} specialHeaderStyle={true} />
+            <Logo variant={isTransparent ? 'inverse' : 'default'} specialHeaderStyle={onHomepageTop} />
           </Link>
         </div>
         
@@ -220,33 +222,43 @@ const Header: React.FC = () => {
           >
             <motion.nav 
               className="flex flex-col items-center justify-center h-full space-y-8"
-              variants={navContainerVariants}
+              variants={{
+                hidden: {},
+                visible: {
+                    transition: {
+                        staggerChildren: 0.08,
+                        delayChildren: 0.2,
+                    },
+                },
+              }}
               initial="hidden"
               animate="visible"
               exit="hidden"
             >
-             <LayoutGroup>
-              {NAV_LINKS.map((link) => {
-                 const isActive = location.pathname === link.path;
-                 return (
-                  <motion.div key={link.name} variants={navItemVariants} className="relative">
-                    <NavLink
-                      to={link.path}
-                      onClick={() => setIsOpen(false)}
-                      className="text-xl sm:text-2xl text-navy dark:text-white hover:text-gold transition-colors duration-300 font-medium"
-                    >
-                      {link.name}
-                    </NavLink>
-                    {isActive && (
-                      <motion.div
-                        layoutId="active-nav-underline"
-                        className="absolute -bottom-1 left-0 right-0 h-[2px] bg-gold"
-                        transition={{ type: 'spring', stiffness: 300, damping: 30 }}
-                      />
-                    )}
-                  </motion.div>
-                 )
-              })}
+              <LayoutGroup id="mobile-nav">
+                {NAV_LINKS.map((link) => {
+                  const isActive = location.pathname === link.path;
+                  return (
+                    <motion.div key={link.name} variants={navItemVariants} className="relative w-4/5 max-w-xs">
+                      {isActive && (
+                        <motion.div
+                          layoutId="active-mobile-nav-pill"
+                          className="absolute inset-0 bg-gold rounded-full"
+                          transition={{ type: 'spring', stiffness: 500, damping: 30 }}
+                        />
+                      )}
+                      <NavLink
+                        to={link.path}
+                        onClick={() => setIsOpen(false)}
+                        className={`relative z-10 block w-full rounded-full py-3 text-center text-xl sm:text-2xl font-medium transition-colors duration-300 focus:outline-none focus-visible:ring-2 focus-visible:ring-gold ${
+                            isActive ? 'text-navy' : 'text-navy dark:text-white hover:text-gold'
+                        }`}
+                      >
+                        {link.name}
+                      </NavLink>
+                    </motion.div>
+                  )
+                })}
               </LayoutGroup>
               <motion.div variants={navItemVariants} className="mt-4">
                 <Link to="/contact" onClick={() => setIsOpen(false)} className="px-6 py-3 border border-gold text-gold text-lg sm:text-xl rounded-md hover:bg-gold hover:text-navy transition-all duration-300 font-semibold">

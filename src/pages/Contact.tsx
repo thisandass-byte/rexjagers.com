@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { useLocation } from 'react-router-dom';
-import { usePageMeta } from '../lib/seo.tsx';
+import { useSEO } from '../lib/seo.tsx';
 import { motion, AnimatePresence } from 'framer-motion';
 import PageHeader from '../components/PageHeader.tsx';
 import AnimatedSection from '../components/AnimatedSection.tsx';
@@ -8,10 +8,19 @@ import SectionTitle from '../components/SectionTitle.tsx';
 import { CheckCircleIcon } from '../components/Icons.tsx';
 
 const Contact: React.FC = () => {
-  usePageMeta(
-    'Contact Us | RexJagers Executive Search',
-    'Connect with RexJagers to discuss your leadership needs or explore career opportunities. Reach our teams in Chennai and Bangalore.'
-  );
+  const pageHeaderData = {
+    title: "Contact Us",
+    subtitle: "Let's connect and build the future of leadership together.",
+    imageUrl: "https://images.pexels.com/photos/3727463/pexels-photo-3727463.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2",
+    imageAlt: "Professional woman smiling on a call, symbolizing communication and contact"
+  };
+
+  useSEO({
+    title: 'Contact Us | RexJagers Executive Search',
+    description: 'Connect with RexJagers to discuss your leadership needs or explore career opportunities. Reach our teams in Chennai and Bangalore.',
+    imageUrl: pageHeaderData.imageUrl,
+    imageAlt: pageHeaderData.imageAlt
+  });
   
   const location = useLocation();
   const [formState, setFormState] = useState({
@@ -70,18 +79,13 @@ const Contact: React.FC = () => {
     }, 1500);
   };
 
-  const inputStyles = 'w-full bg-white dark:bg-navy border rounded-md py-3 px-4 text-navy dark:text-white focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-offset-light-slate dark:focus:ring-offset-dark-bg-section transition-all duration-300';
-  const normalBorder = 'border-slate/50 dark:border-slate/50 focus:border-gold focus:ring-gold';
+  const inputStyles = 'w-full bg-white dark:bg-navy border rounded-md py-3 px-4 text-navy dark:text-white placeholder:text-gray-500 dark:placeholder:text-gray-400 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-offset-light-slate dark:focus:ring-offset-dark-bg-section transition-all duration-300';
+  const normalBorder = 'border-navy/20 dark:border-slate/40 focus:border-gold focus:ring-gold';
   const errorBorder = 'border-red-500 focus:border-red-500 focus:ring-red-500';
 
   return (
-    <div className="text-navy/75 dark:text-slate">
-      <PageHeader
-        title="Contact Us"
-        subtitle="Let's connect and build the future of leadership together."
-        imageUrl="https://images.pexels.com/photos/3727463/pexels-photo-3727463.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2"
-        imageAlt="Professional woman smiling on a call, symbolizing communication and contact"
-      />
+    <div>
+      <PageHeader {...pageHeaderData} />
 
       {/* Contact Form & Info */}
       <AnimatedSection className="py-20 md:py-28">
@@ -90,14 +94,14 @@ const Contact: React.FC = () => {
           <div className="space-y-8">
             <div>
               <SectionTitle>Get in Touch</SectionTitle>
-              <p className="text-navy/75 dark:text-slate mt-4">
+              <p className="mt-4 text-gray-700 dark:text-slate-light">
                 Whether you are an organization seeking transformative leadership, or a senior executive considering your next career move, we would be delighted to hear from you.
               </p>
             </div>
             <div>
               <h3 className="text-xl font-bold text-gold mb-2">Our Offices</h3>
-              <p className="text-navy/75 dark:text-slate">Chennai, India</p>
-              <p className="text-navy/75 dark:text-slate">Bangalore, India</p>
+              <p className="text-gray-700 dark:text-slate-light">Chennai, India</p>
+              <p className="text-gray-700 dark:text-slate-light">Bangalore, India</p>
             </div>
             <div>
               <h3 className="text-xl font-bold text-gold mb-2">Email</h3>
@@ -125,7 +129,7 @@ const Contact: React.FC = () => {
                 >
                   <CheckCircleIcon className="w-16 h-16 text-gold mx-auto mb-4" />
                   <h3 className="text-2xl font-bold text-navy dark:text-white mb-2">Thank You!</h3>
-                  <p className="text-navy/75 dark:text-slate">Your message has been sent successfully. We will be in touch shortly.</p>
+                  <p className="text-gray-700 dark:text-slate-light">Your message has been sent successfully. We will be in touch shortly.</p>
                 </motion.div>
               ) : (
                 <motion.form
@@ -142,22 +146,22 @@ const Contact: React.FC = () => {
                     <div>
                       <label htmlFor="name" className="block text-sm font-medium text-navy dark:text-white mb-2">Full Name</label>
                       <input type="text" id="name" name="name" value={formState.name} onChange={handleInputChange} required className={`${inputStyles} ${errors.name ? errorBorder : normalBorder}`} />
-                      {errors.name && <p className="text-red-400 text-sm mt-1">{errors.name}</p>}
+                      {errors.name && <p className="text-red-600 dark:text-red-400 text-sm mt-1">{errors.name}</p>}
                     </div>
                     <div>
                       <label htmlFor="email" className="block text-sm font-medium text-navy dark:text-white mb-2">Email Address</label>
                       <input type="email" id="email" name="email" value={formState.email} onChange={handleInputChange} required className={`${inputStyles} ${errors.email ? errorBorder : normalBorder}`} />
-                      {errors.email && <p className="text-red-400 text-sm mt-1">{errors.email}</p>}
+                      {errors.email && <p className="text-red-600 dark:text-red-400 text-sm mt-1">{errors.email}</p>}
                     </div>
                     <div>
                       <label htmlFor="subject" className="block text-sm font-medium text-navy dark:text-white mb-2">Subject</label>
                       <input type="text" id="subject" name="subject" value={formState.subject} onChange={handleInputChange} required className={`${inputStyles} ${errors.subject ? errorBorder : normalBorder}`} />
-                      {errors.subject && <p className="text-red-400 text-sm mt-1">{errors.subject}</p>}
+                      {errors.subject && <p className="text-red-600 dark:text-red-400 text-sm mt-1">{errors.subject}</p>}
                     </div>
                     <div>
                       <label htmlFor="message" className="block text-sm font-medium text-navy dark:text-white mb-2">Message</label>
                       <textarea id="message" name="message" rows={5} value={formState.message} onChange={handleInputChange} required className={`${inputStyles} ${errors.message ? errorBorder : normalBorder}`}></textarea>
-                      {errors.message && <p className="text-red-400 text-sm mt-1">{errors.message}</p>}
+                      {errors.message && <p className="text-red-600 dark:text-red-400 text-sm mt-1">{errors.message}</p>}
                     </div>
                   </fieldset>
                   <div className="mt-6">

@@ -23,10 +23,10 @@ const ArticleCard: React.FC<{ article: InsightArticle }> = ({ article }) => (
             </div>
             <div className="p-6 flex flex-col flex-grow">
                 <h3 className="text-xl font-bold leading-tight group-hover:text-gold transition-colors mb-2">{article.title}</h3>
-                <div className="text-sm text-navy/75 dark:text-slate mb-4">
+                <div className="text-sm dark:text-slate mb-4">
                     <span>By {article.author}</span> | <span>{article.date}</span>
                 </div>
-                <p className="text-navy/75 dark:text-slate text-sm flex-grow">{article.excerpt}</p>
+                <p className="dark:text-slate text-sm flex-grow">{article.excerpt}</p>
             </div>
         </Link>
     </motion.div>
@@ -47,7 +47,7 @@ const Insights: React.FC = () => {
       };
 
     return (
-        <div className="bg-white dark:bg-navy text-navy/75 dark:text-slate">
+        <div className="bg-white dark:bg-navy dark:text-slate">
             <PageHeader
                 title="Thought Leadership"
                 subtitle="Expert insights on the trends shaping executive talent and corporate governance."

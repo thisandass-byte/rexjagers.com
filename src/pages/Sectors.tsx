@@ -1,25 +1,29 @@
 import React from 'react';
 import { motion } from 'framer-motion';
 import { SECTORS } from '../lib/schema.ts';
-import { usePageMeta } from '../lib/seo.tsx';
+import { useSEO } from '../lib/seo.tsx';
 import AnimatedSection from '../components/AnimatedSection.tsx';
 import PageHeader from '../components/PageHeader.tsx';
 
 
 const Sectors: React.FC = () => {
-  usePageMeta(
-    'Industry Sectors | RexJagers Executive Search',
-    'Discover RexJagers\' deep domain expertise in key sectors like IT, Banking, Healthcare, Manufacturing, Engineering, and Consumer & Retail executive recruitment.'
-  );
+  const pageHeaderData = {
+    title: "Industry Sectors",
+    subtitle: "Specialized expertise across the markets that matter.",
+    imageUrl: "https://images.pexels.com/photos/327540/pexels-photo-327540.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2",
+    imageAlt: "Abstract glowing lines connecting points, symbolizing various industry sectors"
+  };
+
+  useSEO({
+    title: 'Industry Sectors | RexJagers Executive Search',
+    description: 'Discover RexJagers\' deep domain expertise in key sectors like IT, Banking, Healthcare, Manufacturing, Engineering, and Consumer & Retail executive recruitment.',
+    imageUrl: pageHeaderData.imageUrl,
+    imageAlt: pageHeaderData.imageAlt
+  });
 
   return (
-    <div className="text-navy/75 dark:text-slate">
-      <PageHeader
-        title="Industry Sectors"
-        subtitle="Specialized expertise across the markets that matter."
-        imageUrl="https://images.pexels.com/photos/327540/pexels-photo-327540.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2"
-        imageAlt="Abstract glowing lines connecting points, symbolizing various industry sectors"
-      />
+    <div>
+      <PageHeader {...pageHeaderData} />
 
       {/* Sectors List */}
       <AnimatedSection className="py-20 md:py-28">
@@ -39,7 +43,7 @@ const Sectors: React.FC = () => {
                 </div>
                 <div className="md:w-1/2">
                   <h2 className="text-3xl font-serif text-gold mb-3">{sector.name}</h2>
-                  <p className="text-navy/75 dark:text-slate leading-relaxed">
+                  <p className="leading-relaxed text-gray-700 dark:text-slate-light">
                     {sector.description} We possess a profound understanding of the talent landscape within this vertical. Our dedicated consultants maintain a vast network of senior executives and emerging leaders, enabling us to provide unparalleled market insights and access to the most sought-after professionals in the field.
                   </p>
                 </div>

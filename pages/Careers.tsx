@@ -32,9 +32,9 @@ const JobOpening: React.FC<{ opening: CareerOpeningType }> = ({ opening }) => {
                 className={`overflow-hidden transition-all duration-500 ease-in-out ${isOpen ? 'max-h-screen' : 'max-h-0'}`}
             >
                 <div className="mt-4 pt-4 border-t border-slate/50">
-                    <p className="text-navy/75 dark:text-slate mb-4">{opening.description}</p>
+                    <p className="dark:text-slate mb-4">{opening.description}</p>
                     <h4 className="font-semibold mb-2">Key Requirements:</h4>
-                    <ul className="list-disc list-inside space-y-2 text-navy/75 dark:text-slate">
+                    <ul className="list-disc list-inside space-y-2 dark:text-slate">
                         {opening.requirements.map((req, index) => (
                             <li key={index}>{req}</li>
                         ))}
@@ -69,7 +69,7 @@ const Careers: React.FC = () => {
 
 
   return (
-    <div className="text-navy/75 dark:text-slate">
+    <div className="dark:text-slate">
       <PageHeader
         title="Career Opportunities"
         subtitle="Join a team of experts dedicated to shaping the future of leadership."
@@ -82,7 +82,7 @@ const Careers: React.FC = () => {
         <div className="container mx-auto px-6 max-w-4xl">
           <div className="text-center mb-12">
             <SectionTitle>Current Openings</SectionTitle>
-            <p className="mt-4 text-navy/75 dark:text-slate">
+            <p className="mt-4 dark:text-slate">
               We are always looking for passionate and talented individuals to join our firm. Explore our current opportunities below.
             </p>
           </div>
@@ -104,7 +104,7 @@ const Careers: React.FC = () => {
           ) : (
             <div className="text-center bg-light-slate dark:bg-dark-bg-section p-8 border border-navy/15 dark:border-slate/30 rounded-lg">
               <h3 className="text-2xl text-navy dark:text-white">No Openings At The Moment</h3>
-              <p className="text-navy/75 dark:text-slate mt-2">
+              <p className="dark:text-slate mt-2">
                 There are currently no open positions, but we are always interested in connecting with talented professionals.
                 Feel free to <Link to="/contact" className="text-gold hover:underline focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-gold rounded-md">submit your profile</Link> for future consideration.
               </p>

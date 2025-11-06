@@ -38,8 +38,10 @@ const TestimonialCarousel: React.FC = () => {
               exit="exit"
               transition={{ duration: 0.3 }}
               className="bg-light-slate dark:bg-dark-bg-section p-8 rounded-lg border border-navy/15 dark:border-slate/30 shadow-sm"
+              aria-live="polite"
+              role="region"
             >
-              <p className="text-navy/75 dark:text-slate italic text-lg">"{TESTIMONIALS[currentTestimonial].quote}"</p>
+              <p className="italic text-lg text-gray-800 dark:text-slate">"{TESTIMONIALS[currentTestimonial].quote}"</p>
               <div className="mt-6">
                 <p className="font-bold text-navy dark:text-white text-xl">{TESTIMONIALS[currentTestimonial].name}</p>
                 <p className="text-sm text-gold">{TESTIMONIALS[currentTestimonial].company}</p>

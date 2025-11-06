@@ -11,7 +11,7 @@ const TermsOfService: React.FC = () => {
     );
 
     return (
-        <div className="text-navy/75 dark:text-slate">
+        <div className="dark:text-slate">
             <PageHeader
                 title="Terms of Service"
                 subtitle="Please read these terms carefully before using our services."

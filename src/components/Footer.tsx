@@ -17,7 +17,7 @@ const Footer: React.FC = () => {
                         <Link to="/" className="inline-block mb-4 rounded-md focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-gold focus-visible:ring-offset-2 focus-visible:ring-offset-navy dark:focus-visible:ring-offset-dark-bg-section" aria-label="RexJagers Home">
                             <Logo variant="inverse" />
                         </Link>
-                        <p className="text-sm text-slate/80 mb-6 max-w-xs">
+                        <p className="text-sm text-slate-light mb-6 max-w-xs">
                             Architects of Leadership. A premier executive search firm dedicated to identifying and placing visionary leaders.
                         </p>
                         <div className="flex space-x-6">
@@ -33,7 +33,7 @@ const Footer: React.FC = () => {
                         <ul className="space-y-2">
                             {NAV_LINKS.map(link => (
                                 <li key={link.name}>
-                                    <Link to={link.path} className="text-slate/90 hover:text-gold transition-colors duration-300 rounded-md focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-gold">
+                                    <Link to={link.path} className="text-slate hover:text-gold transition-colors duration-300 rounded-md focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-gold">
                                         {link.name}
                                     </Link>
                                 </li>
@@ -47,13 +47,13 @@ const Footer: React.FC = () => {
                          <ul className="space-y-2">
                              {footerSectors.map(sector => (
                                 <li key={sector.name}>
-                                    <Link to="/sectors" className="text-slate/90 hover:text-gold transition-colors duration-300 rounded-md focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-gold">
+                                    <Link to="/sectors" className="text-slate hover:text-gold transition-colors duration-300 rounded-md focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-gold">
                                         {sector.name}
                                     </Link>
                                 </li>
                             ))}
                              <li>
-                                <Link to="/sectors" className="text-slate/90 font-semibold hover:text-gold transition-colors duration-300 rounded-md focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-gold">
+                                <Link to="/sectors" className="text-slate font-semibold hover:text-gold transition-colors duration-300 rounded-md focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-gold">
                                     View All
                                 </Link>
                              </li>
@@ -65,22 +65,22 @@ const Footer: React.FC = () => {
                         <h3 className="text-lg font-semibold text-gold mb-4">Our Commitment</h3>
                         <ul className="space-y-2">
                             <li>
-                                <Link to="/privacy-policy" className="text-slate/90 hover:text-gold transition-colors duration-300 rounded-md focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-gold">
+                                <Link to="/privacy-policy" className="text-slate hover:text-gold transition-colors duration-300 rounded-md focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-gold">
                                     Discretion & Confidentiality
                                 </Link>
                             </li>
                              <li>
-                                <Link to="/about" className="text-slate/90 hover:text-gold transition-colors duration-300 rounded-md focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-gold">
+                                <Link to="/about" className="text-slate hover:text-gold transition-colors duration-300 rounded-md focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-gold">
                                     Diversity & Inclusion
                                 </Link>
                             </li>
                              <li>
-                                <Link to="/candidates" className="text-slate/90 hover:text-gold transition-colors duration-300 rounded-md focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-gold">
+                                <Link to="/candidates" className="text-slate hover:text-gold transition-colors duration-300 rounded-md focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-gold">
                                     Candidate Partnership
                                 </Link>
                             </li>
                              <li>
-                                <Link to="/about" className="text-slate/90 hover:text-gold transition-colors duration-300 rounded-md focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-gold">
+                                <Link to="/about" className="text-slate hover:text-gold transition-colors duration-300 rounded-md focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-gold">
                                     Unyielding Integrity
                                 </Link>
                             </li>
@@ -90,7 +90,7 @@ const Footer: React.FC = () => {
                     {/* Column 5: Contact */}
                     <div>
                         <h3 className="text-lg font-semibold text-gold mb-4">Get In Touch</h3>
-                        <ul className="space-y-2 text-slate/90">
+                        <ul className="space-y-2 text-slate-light">
                             <li>Chennai, India</li>
                             <li>Bangalore, India</li>
                             <li className="pt-2">
@@ -106,8 +106,8 @@ const Footer: React.FC = () => {
 
                 {/* Bottom Bar */}
                 <div className="border-t border-slate/30 mt-12 pt-6 flex flex-col sm:flex-row justify-between items-center text-center sm:text-left">
-                    <p className="text-xs text-slate/80 mb-4 sm:mb-0">&copy; {new Date().getFullYear()} RexJagers Executive Search. All Rights Reserved.</p>
-                    <div className="text-xs text-slate/80 flex space-x-4">
+                    <p className="text-xs text-slate-dark mb-4 sm:mb-0">&copy; {new Date().getFullYear()} RexJagers Executive Search. All Rights Reserved.</p>
+                    <div className="text-xs text-slate-dark flex space-x-4">
                         <Link to="/privacy-policy" className="hover:text-gold transition-colors rounded-md focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-gold">Privacy Policy</Link>
                         <span>|</span>
                         <Link to="/terms-of-service" className="hover:text-gold transition-colors rounded-md focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-gold">Terms of Service</Link>

@@ -1,26 +1,30 @@
 import React from 'react';
-import { usePageMeta } from '../lib/seo.tsx';
+import { useSEO } from '../lib/seo.tsx';
 import PageHeader from '../components/PageHeader.tsx';
 import AnimatedSection from '../components/AnimatedSection.tsx';
 import SectionTitle from '../components/SectionTitle.tsx';
 
 const TermsOfService: React.FC = () => {
-    usePageMeta(
-        'Terms of Service | RexJagers Executive Search',
-        'Review the terms of service for using the RexJagers website and engaging with our recruitment services.'
-    );
+    const pageHeaderData = {
+        title: "Terms of Service",
+        subtitle: "Please read these terms carefully before using our services.",
+        imageUrl: "https://images.pexels.com/photos/7412098/pexels-photo-7412098.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2",
+        imageAlt: "A gavel and legal book representing terms and conditions"
+    };
+
+    useSEO({
+        title: 'Terms of Service | RexJagers Executive Search',
+        description: 'Review the terms of service for using the RexJagers website and engaging with our recruitment services.',
+        imageUrl: pageHeaderData.imageUrl,
+        imageAlt: pageHeaderData.imageAlt
+    });
 
     return (
-        <div className="text-navy/75 dark:text-slate">
-            <PageHeader
-                title="Terms of Service"
-                subtitle="Please read these terms carefully before using our services."
-                imageUrl="https://images.pexels.com/photos/7412098/pexels-photo-7412098.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2"
-                imageAlt="A gavel and legal book representing terms and conditions"
-            />
+        <div>
+            <PageHeader {...pageHeaderData} />
 
             <AnimatedSection className="py-20 md:py-28">
-                <div className="container mx-auto px-6 max-w-4xl space-y-6 leading-relaxed">
+                <div className="container mx-auto px-6 max-w-4xl space-y-6 leading-relaxed text-gray-700 dark:text-slate-light">
                     <div>
                         <SectionTitle>Agreement to Terms</SectionTitle>
                         <p className="mt-4">

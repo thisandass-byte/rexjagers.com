@@ -1,4 +1,4 @@
-import type { ComponentType } from 'react';
+import React, { type ComponentType } from 'react';
 import { BriefcaseIcon, UsersIcon, LightBulbIcon, BuildingLibraryIcon } from '../components/Icons.tsx';
 
 // Types
@@ -42,11 +42,14 @@ export interface CareerOpening {
 }
 
 export interface InsightArticle {
+  id: string;
   image: string;
   title: string;
   author: string;
   date: string;
   excerpt: string;
+  // FIX: Changed content type to string to avoid JSX parsing in a .ts file.
+  content: string;
 }
 
 export interface ProcessStep {
@@ -208,25 +211,77 @@ export const CAREER_OPENINGS: CareerOpening[] = [
 
 export const INSIGHTS_ARTICLES: InsightArticle[] = [
   {
+    id: 'future-of-the-c-suite-2024',
     image: 'https://images.pexels.com/photos/3184291/pexels-photo-3184291.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2',
     title: 'The Future of the C-Suite: 5 Trends Shaping Executive Leadership in 2024',
     author: 'Aarav Sharma',
     date: 'August 15, 2024',
-    excerpt: 'The modern C-suite is evolving at an unprecedented pace. We explore the critical trends, from AI integration to sustainability, that are redefining what it means to be a leader.'
+    excerpt: 'The modern C-suite is evolving at an unprecedented pace. We explore the critical trends, from AI integration to sustainability, that are redefining what it means to be a leader.',
+    // FIX: Converted JSX content to an HTML string to prevent parsing errors in a .ts file.
+    content: `
+        <p>The executive landscape is in a constant state of flux, driven by technological advancements, shifting market dynamics, and evolving stakeholder expectations. As we move through 2024, it's clear that the roles within the C-suite are not just changing; they are being fundamentally redefined. Leaders who wish to remain effective must adapt to these new realities. Here are five critical trends that are shaping the future of executive leadership.</p>
+        <h3 class="text-2xl font-bold text-gold mt-6 mb-3">1. The AI-Integrated Executive</h3>
+        <p>Artificial intelligence is no longer a tool for the IT department alone. C-suite leaders, from the CEO to the CMO, must now be AI-literate. This means understanding how AI can drive strategy, optimize operations, and create new revenue streams. The most effective leaders will be those who can champion AI initiatives, manage the ethical implications, and foster a culture of data-driven decision-making throughout the organization.</p>
+        <h3 class="text-2xl font-bold text-gold mt-6 mb-3">2. Sustainability as a Core Mandate</h3>
+        <p>Environmental, Social, and Governance (ESG) considerations have moved from the periphery to the core of corporate strategy. The C-suite is now directly accountable for the company's environmental impact, social responsibility, and ethical governance. This requires a new breed of leader who can balance profitability with purpose, and who can effectively communicate the company's ESG story to investors, customers, and employees.</p>
+        <h3 class="text-2xl font-bold text-gold mt-6 mb-3">3. The Rise of the Chief People Officer</h3>
+        <p>The war for talent has elevated the role of the Chief Human Resources Officer (CHRO) to that of a strategic partner to the CEO. Now often titled the Chief People Officer, this role is critical in shaping company culture, driving employee engagement, and building a resilient, agile workforce. The focus has shifted from traditional HR functions to a more holistic approach that encompasses employee well-being, diversity and inclusion, and future-of-work planning.</p>
+        <h3 class="text-2xl font-bold text-gold mt-6 mb-3">4. Radical Adaptability and Resilience</h3>
+        <p>The pace of change has never been faster. Leaders must be able to navigate ambiguity, pivot quickly in response to market disruptions, and lead their teams through periods of uncertainty. This requires a high degree of emotional intelligence, resilience, and a commitment to continuous learning. The traditional top-down, command-and-control style of leadership is giving way to a more agile, collaborative, and empowering approach.</p>
+        <h3 class="text-2xl font-bold text-gold mt-6 mb-3">5. The Hyper-Personalized Customer Experience</h3>
+        <p>In a crowded marketplace, customer experience is the key differentiator. The entire C-suite, not just the CMO, must be obsessed with the customer. This means leveraging data and technology to create hyper-personalized experiences, and empowering employees at all levels to deliver exceptional service. The leaders who succeed will be those who can build a truly customer-centric organization.</p>
+        <p class="mt-6">In conclusion, the C-suite of the future will be more technologically adept, socially conscious, people-focused, and adaptable than ever before. As executive search partners, our role is to identify and cultivate these next-generation leaders who possess the skills, mindset, and vision to navigate the complexities of the modern business world.</p>
+    `
   },
   {
+    id: 'esg-core-competency-for-cfos',
     image: 'https://images.pexels.com/photos/7567443/pexels-photo-7567443.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2',
     title: 'Beyond the Balance Sheet: Why ESG is Now a Core Competency for CFOs',
     author: 'Priya Mehta',
     date: 'July 22, 2024',
-    excerpt: 'Financial leaders are no longer just guardians of the bottom line. Discover why expertise in Environmental, Social, and Governance (ESG) is critical for today’s CFO.'
+    excerpt: 'Financial leaders are no longer just guardians of the bottom line. Discover why expertise in Environmental, Social, and Governance (ESG) is critical for today’s CFO.',
+    // FIX: Converted JSX content to an HTML string to prevent parsing errors in a .ts file.
+    content: `
+        <p>For decades, the Chief Financial Officer (CFO) has been the ultimate guardian of the bottom line, focused on financial reporting, capital allocation, and shareholder returns. While these responsibilities remain crucial, a new, equally important mandate has emerged: Environmental, Social, and Governance (ESG). Today, a CFO's ability to integrate ESG principles into financial strategy is no longer a "nice-to-have" but a core competency essential for long-term value creation.</p>
+        <h3 class="text-2xl font-bold text-gold mt-6 mb-3">The Shift in Investor Expectations</h3>
+        <p>The primary driver of this shift is the investment community. Investors increasingly recognize that companies with strong ESG performance are better positioned to mitigate risks, capitalize on new opportunities, and deliver sustainable, long-term returns. They are demanding more than just financial data; they want transparent, standardized reporting on ESG metrics. The CFO, as the primary liaison with investors, is now expected to articulate the company's ESG story and demonstrate its link to financial performance.</p>
+        <h3 class="text-2xl font-bold text-gold mt-6 mb-3">ESG as a Risk Management Framework</h3>
+        <p>From climate-related physical risks to supply chain disruptions and regulatory changes, ESG factors represent significant financial risks. A forward-thinking CFO understands that a robust ESG strategy is a powerful risk management tool. By proactively addressing these issues, companies can avoid costly fines, reputational damage, and operational disruptions. The CFO's role is to quantify these risks and ensure they are integrated into the company's enterprise risk management (ERM) framework.</p>
+        <h3 class="text-2xl font-bold text-gold mt-6 mb-3">Unlocking New Opportunities</h3>
+        <p>ESG is not just about mitigating risk; it's also about creating value. A strong commitment to sustainability can drive innovation, attract and retain top talent, enhance brand reputation, and open up new markets. For example, investing in renewable energy can lead to significant cost savings, while a commitment to diversity and inclusion can foster a more innovative and productive workforce. The CFO is uniquely positioned to identify these opportunities and allocate capital to the initiatives that will generate the highest returns.</p>
+        <p class="mt-6">The modern CFO must be a strategic partner to the CEO, capable of seeing beyond the traditional balance sheet. They must be able to speak the language of sustainability and translate ESG performance into financial terms. As companies navigate the complexities of the 21st-century business landscape, the ESG-savvy CFO will be one of their most valuable assets.</p>
+    `
   },
   {
+    id: 'building-resilient-leadership-teams',
     image: 'https://images.pexels.com/photos/7841807/pexels-photo-7841807.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2',
     title: 'Building a Resilient Leadership Team in the Age of Disruption',
     author: 'Rohan Desai',
     date: 'June 05, 2024',
-    excerpt: 'In a volatile market, leadership resilience is paramount. We outline key strategies for assessing and developing the adaptive capacity of your executive team.'
+    excerpt: 'In a volatile market, leadership resilience is paramount. We outline key strategies for assessing and developing the adaptive capacity of your executive team.',
+    // FIX: Converted JSX content to an HTML string to prevent parsing errors in a .ts file.
+    content: `
+        <p>Disruption is the new normal. From pandemics and geopolitical instability to rapid technological shifts and changing consumer behaviors, the challenges facing businesses today are more complex and unpredictable than ever before. In this volatile environment, the single most important asset an organization can have is a resilient leadership team. But what exactly is leadership resilience, and how can you build it within your organization?</p>
+        <h3 class="text-2xl font-bold text-gold mt-6 mb-3">Defining Leadership Resilience</h3>
+        <p>Leadership resilience is more than just the ability to bounce back from adversity. It's the capacity to anticipate, adapt, and thrive in the face of change. Resilient leaders are not just tough; they are also agile, optimistic, and emotionally intelligent. They are able to maintain a sense of calm and purpose in the midst of chaos, and they inspire their teams to do the same.</p>
+        <h3 class="text-2xl font-bold text-gold mt-6 mb-3">Assessing for Resilience in the Hiring Process</h3>
+        <p>Building a resilient leadership team starts with the hiring process. When assessing candidates for senior roles, it's essential to look beyond their technical skills and experience. We employ competency-based interviewing techniques to probe for the key traits of resilience:</p>
+        <ul class="list-disc list-inside space-y-2 mt-4 ml-4">
+          <li><strong>Adaptability:</strong> Ask for examples of times they have had to pivot quickly in response to unexpected challenges.</li>
+          <li><strong>Optimism:</strong> Look for a realistic yet positive outlook, and a tendency to view setbacks as learning opportunities.</li>
+          <li><strong>Emotional Intelligence:</strong> Assess their ability to manage their own emotions and empathize with others, especially under pressure.</li>
+          <li><strong>Problem-Solving:</strong> Evaluate their ability to think critically and creatively to find solutions to complex problems.</li>
+        </ul>
+        <h3 class="text-2xl font-bold text-gold mt-6 mb-3">Developing Resilience Within Your Existing Team</h3>
+        <p>Resilience is not a fixed trait; it can be developed and strengthened over time. Organizations can foster resilience within their leadership teams through a variety of strategies:</p>
+        <ul class="list-disc list-inside space-y-2 mt-4 ml-4">
+          <li><strong>Promote Psychological Safety:</strong> Create a culture where leaders feel safe to take risks, admit mistakes, and ask for help.</li>
+          <li><strong>Invest in Leadership Development:</strong> Provide training and coaching on topics such as mindfulness, emotional regulation, and stress management.</li>
+          <li><strong>Encourage Strong Networks:</strong> Foster a sense of camaraderie and mutual support among your leadership team.</li>
+          <li><strong>Clarify Purpose and Values:</strong> A strong sense of purpose can be a powerful anchor in times of uncertainty.</li>
+        </ul>
+        <p class="mt-6">In the age of disruption, building a resilient leadership team is not just a strategic advantage; it's a strategic imperative. By making resilience a key criterion in your hiring and development processes, you can build an organization that is not just able to survive, but to thrive in the face of whatever challenges the future may hold.</p>
+    `
   }
 ];
 

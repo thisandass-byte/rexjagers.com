@@ -10,10 +10,11 @@
     <meta name="author" content="RexJagers" />
     <meta property="og:title" content="RexJagers | Premier Executive Search & Leadership Recruitment" />
     <meta property="og:description" content="Connecting exceptional leadership talent with premier organizations in IT, Banking, Healthcare, and more." />
-    <meta property="og:image" content="https://images.pexels.com/photos/3184418/pexels-photo-3184418.jpeg?auto=compress&cs=tinysrgb&w=1200&h=630&fit=crop" />
+    <meta property="og:image" content="/og-default.jpg" />
     <meta property="og:url" content="https://rexjagers.com" />
     <meta name="twitter:card" content="summary_large_image" />
     <link rel="canonical" href="https://rexjagers.com/" />
+    <link rel="preload" href="https://images.pexels.com/photos/3184418/pexels-photo-3184418.jpeg?auto=compress&cs=tinysrgb&w=1920&h=1080&dpr=2" as="image" fetchpriority="high">
 
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -38,9 +39,12 @@
           extend: {
             colors: {
               'navy': '#0a192f',
+              'deep-navy': '#020c1b',
               'dark-bg-section': '#020c1b', 
-              'slate': '#ccd6f6', // Brighter, higher-contrast gray for dark mode text
-              'light-slate': '#f8f9fa', // Warmer off-white for light mode sections
+              'slate': '#ccd6f6', // Brightest text
+              'slate-light': '#a8b2d1', // Secondary text
+              'slate-dark': '#8892b0', // Tertiary text
+              'light-slate': '#f8f9fa',
               'white': '#FFFFFF',
               'gold': '#d4af37',
             },
@@ -76,6 +80,7 @@
       "name": "RexJagers Executive Search",
       "url": "https://rexjagers.com/",
       "logo": "https://rexjagers.com/logo.png",
+      "image": "https://rexjagers.com/og-default.jpg",
       "description": "RexJagers is a premier executive search firm in India, specializing in CXO and leadership hiring for IT, Banking, Healthcare, Manufacturing, and Engineering sectors.",
       "address": {
         "@type": "PostalAddress",
@@ -85,8 +90,13 @@
       "contactPoint": {
         "@type": "ContactPoint",
         "telephone": "+917845423555",
-        "contactType": "customer service"
-      }
+        "contactType": "customer service",
+        "email": "contact@rexjagers.com"
+      },
+      "sameAs": [
+        "https://twitter.com/rexjagers",
+        "https://linkedin.com/company/rexjagers"
+      ]
     }
     </script>
     <script src="https://unpkg.com/react@18/umd/react.production.min.js"></script>

@@ -109,7 +109,7 @@ const Home: React.FC = () => {
       <AnimatedSection className="py-20 md:py-28 bg-white dark:bg-navy">
         <div className="container mx-auto px-6 text-center">
             <SectionTitle>Defining the Future of Executive Talent</SectionTitle>
-            <p className="max-w-3xl mx-auto text-navy/75 dark:text-slate mb-8 mt-4">
+            <p className="max-w-3xl mx-auto dark:text-slate mb-8 mt-4">
                 At RexJagers, we believe that the right leadership is the most critical catalyst for an organization's success. With a bespoke, research-driven approach, we connect our clients with the top 1% of talent, ensuring a perfect alignment of vision, culture, and expertise.
             </p>
             <Link to="/about" className="text-gold font-semibold text-lg hover:underline group flex items-center justify-center rounded-md focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-gold">
@@ -123,7 +123,7 @@ const Home: React.FC = () => {
         <div className="container mx-auto px-6">
           <div className="text-center mb-12">
             <SectionTitle>Our Signature Services</SectionTitle>
-            <p className="mt-4 max-w-2xl mx-auto text-navy/75 dark:text-slate">A comprehensive suite of solutions designed to build and strengthen your leadership foundation.</p>
+            <p className="mt-4 max-w-2xl mx-auto dark:text-slate">A comprehensive suite of solutions designed to build and strengthen your leadership foundation.</p>
           </div>
           <motion.div
             className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8"
@@ -138,7 +138,7 @@ const Home: React.FC = () => {
                 <div className="relative">
                   <service.icon className="h-10 w-10 text-gold mb-4" />
                   <h3 className="text-xl font-bold text-navy dark:text-white mb-2">{service.title}</h3>
-                  <p className="text-navy/75 dark:text-slate">{service.description}</p>
+                  <p className="dark:text-slate">{service.description}</p>
                 </div>
               </motion.div>
             ))}
@@ -151,7 +151,7 @@ const Home: React.FC = () => {
         <div className="container mx-auto px-6">
           <div className="text-center mb-12">
             <SectionTitle>Industry Expertise</SectionTitle>
-            <p className="mt-4 max-w-2xl mx-auto text-navy/75 dark:text-slate">Deep domain knowledge across primary verticals to ensure we understand your unique challenges.</p>
+            <p className="mt-4 max-w-2xl mx-auto dark:text-slate">Deep domain knowledge across primary verticals to ensure we understand your unique challenges.</p>
           </div>
           <motion.div
             className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8"
@@ -197,7 +197,7 @@ const Home: React.FC = () => {
                 transition={{ duration: 0.3 }}
                 className="bg-light-slate dark:bg-dark-bg-section p-8 rounded-lg border border-navy/15 dark:border-slate/30 shadow-sm"
               >
-                <p className="text-navy/75 dark:text-slate italic text-lg">"{TESTIMONIALS[currentTestimonial].quote}"</p>
+                <p className="dark:text-slate italic text-lg">"{TESTIMONIALS[currentTestimonial].quote}"</p>
                 <div className="mt-6">
                   <p className="font-bold text-navy dark:text-white text-xl">{TESTIMONIALS[currentTestimonial].name}</p>
                   <p className="text-sm text-gold">{TESTIMONIALS[currentTestimonial].company}</p>

@@ -13,7 +13,7 @@ const Sectors: React.FC = () => {
   );
 
   return (
-    <div className="text-navy/75 dark:text-slate">
+    <div className="dark:text-slate">
       <PageHeader
         title="Industry Sectors"
         subtitle="Specialized expertise across the markets that matter."
@@ -39,7 +39,7 @@ const Sectors: React.FC = () => {
                 </div>
                 <div className="md:w-1/2">
                   <h2 className="text-3xl font-serif text-gold mb-3">{sector.name}</h2>
-                  <p className="text-navy/75 dark:text-slate leading-relaxed">
+                  <p className="dark:text-slate leading-relaxed">
                     {sector.description} We possess a profound understanding of the talent landscape within this vertical. Our dedicated consultants maintain a vast network of senior executives and emerging leaders, enabling us to provide unparalleled market insights and access to the most sought-after professionals in the field.
                   </p>
                 </div>

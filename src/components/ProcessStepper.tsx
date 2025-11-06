@@ -18,7 +18,7 @@ const ProcessStepper: React.FC = () => {
     <div className="container mx-auto px-6">
       <div className="text-center mb-16">
         <SectionTitle>Our Proven Process</SectionTitle>
-        <p className="max-w-3xl mx-auto text-navy/75 dark:text-slate mt-4">
+        <p className="max-w-3xl mx-auto text-gray-700 dark:text-slate-light mt-4">
           A meticulously crafted journey to find not just a candidate, but the right leader for your future.
         </p>
       </div>
@@ -36,7 +36,7 @@ const ProcessStepper: React.FC = () => {
           {PROCESS_STEPS.map((step, index) => (
             <motion.div key={index} variants={itemVariants} className="min-h-[100px]">
               <h3 className="text-2xl font-bold text-gold mb-2">{step.title}</h3>
-              <p className="text-navy/75 dark:text-slate">{step.description}</p>
+              <p className="text-gray-700 dark:text-slate-light">{step.description}</p>
             </motion.div>
           ))}
         </motion.div>
@@ -81,7 +81,7 @@ const ProcessStepper: React.FC = () => {
               </div>
               <div className="pt-2 text-left">
                 <h3 className="text-2xl font-bold text-gold mb-2">{step.title}</h3>
-                <p className="text-navy/75 dark:text-slate">{step.description}</p>
+                <p className="text-gray-700 dark:text-slate-light">{step.description}</p>
               </div>
             </motion.div>
           ))}

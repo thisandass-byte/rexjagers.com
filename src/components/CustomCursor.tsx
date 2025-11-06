@@ -1,18 +1,10 @@
 import React, { useEffect, useState } from 'react';
 import { motion } from 'framer-motion';
 import useMousePosition from '../hooks/useMousePosition.ts';
-import { useTheme } from '../hooks/useTheme.ts';
 
 const CustomCursor: React.FC = () => {
   const { x, y } = useMousePosition();
-  const { theme } = useTheme();
   const [isHovering, setIsHovering] = useState(false);
-
-  const outlineColor = isHovering
-    ? 'rgba(212, 175, 55, 0.3)'
-    : theme === 'dark'
-    ? 'rgba(255, 255, 255, 0.3)'
-    : 'rgba(10, 25, 47, 0.3)';
 
   useEffect(() => {
     const handleMouseEnter = () => setIsHovering(true);
@@ -39,7 +31,6 @@ const CustomCursor: React.FC = () => {
         style={{
           left: x,
           top: y,
-          backgroundColor: outlineColor,
         }}
         animate={{
           scale: isHovering ? 1.5 : 1,
