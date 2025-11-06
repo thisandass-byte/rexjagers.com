@@ -24,7 +24,7 @@ const NotFound: React.FC = () => {
       <PageHeader {...pageHeaderData} />
       <AnimatedSection className="py-20 md:py-28 text-center">
         <div className="container mx-auto px-6">
-          <p className="text-lg mb-8 text-gray-700 dark:text-slate-light">It seems you've taken a wrong turn. Let's get you back on track.</p>
+          <p className="text-lg mb-8 text-navy dark:text-slate-light">It seems you've taken a wrong turn. Let's get you back on track.</p>
           <CTAButton to="/">Go to Homepage</CTAButton>
         </div>
       </AnimatedSection>

@@ -48,7 +48,6 @@ export interface InsightArticle {
   author: string;
   date: string;
   excerpt: string;
-  // FIX: Changed content type to string to avoid JSX parsing in a .ts file.
   content: string;
 }
 
@@ -217,7 +216,6 @@ export const INSIGHTS_ARTICLES: InsightArticle[] = [
     author: 'Aarav Sharma',
     date: 'August 15, 2024',
     excerpt: 'The modern C-suite is evolving at an unprecedented pace. We explore the critical trends, from AI integration to sustainability, that are redefining what it means to be a leader.',
-    // FIX: Converted JSX content to an HTML string to prevent parsing errors in a .ts file.
     content: `
         <p>The executive landscape is in a constant state of flux, driven by technological advancements, shifting market dynamics, and evolving stakeholder expectations. As we move through 2024, it's clear that the roles within the C-suite are not just changing; they are being fundamentally redefined. Leaders who wish to remain effective must adapt to these new realities. Here are five critical trends that are shaping the future of executive leadership.</p>
         <h3 class="text-2xl font-bold text-gold mt-6 mb-3">1. The AI-Integrated Executive</h3>
@@ -240,7 +238,6 @@ export const INSIGHTS_ARTICLES: InsightArticle[] = [
     author: 'Priya Mehta',
     date: 'July 22, 2024',
     excerpt: 'Financial leaders are no longer just guardians of the bottom line. Discover why expertise in Environmental, Social, and Governance (ESG) is critical for today’s CFO.',
-    // FIX: Converted JSX content to an HTML string to prevent parsing errors in a .ts file.
     content: `
         <p>For decades, the Chief Financial Officer (CFO) has been the ultimate guardian of the bottom line, focused on financial reporting, capital allocation, and shareholder returns. While these responsibilities remain crucial, a new, equally important mandate has emerged: Environmental, Social, and Governance (ESG). Today, a CFO's ability to integrate ESG principles into financial strategy is no longer a "nice-to-have" but a core competency essential for long-term value creation.</p>
         <h3 class="text-2xl font-bold text-gold mt-6 mb-3">The Shift in Investor Expectations</h3>
@@ -259,7 +256,6 @@ export const INSIGHTS_ARTICLES: InsightArticle[] = [
     author: 'Rohan Desai',
     date: 'June 05, 2024',
     excerpt: 'In a volatile market, leadership resilience is paramount. We outline key strategies for assessing and developing the adaptive capacity of your executive team.',
-    // FIX: Converted JSX content to an HTML string to prevent parsing errors in a .ts file.
     content: `
         <p>Disruption is the new normal. From pandemics and geopolitical instability to rapid technological shifts and changing consumer behaviors, the challenges facing businesses today are more complex and unpredictable than ever before. In this volatile environment, the single most important asset an organization can have is a resilient leadership team. But what exactly is leadership resilience, and how can you build it within your organization?</p>
         <h3 class="text-2xl font-bold text-gold mt-6 mb-3">Defining Leadership Resilience</h3>

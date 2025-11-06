@@ -24,7 +24,7 @@ const PrivacyPolicy: React.FC = () => {
             <PageHeader {...pageHeaderData} />
 
             <AnimatedSection className="py-20 md:py-28">
-                <div className="container mx-auto px-6 max-w-4xl space-y-6 leading-relaxed text-gray-700 dark:text-slate-light">
+                <div className="container mx-auto px-6 max-w-4xl space-y-6 leading-relaxed text-navy dark:text-slate-light">
                     <div>
                         <SectionTitle>Introduction</SectionTitle>
                         <p className="mt-4">

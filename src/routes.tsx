@@ -26,13 +26,10 @@ interface State {
 }
 
 class ErrorBoundary extends React.Component<Props, State> {
-  // FIX: Reverted state initialization to a constructor. The previous class field
-  // syntax was causing errors where `this.props` and `this.setState` were
-  // inaccessible. This ensures the component's state and props are correctly initialized.
-  constructor(props: Props) {
-    super(props);
-    this.state = { hasError: false };
-  }
+  // FIX: Switched to class property for state initialization.
+  // This is the modern approach and correctly types `this.state` and `this.props` for the component,
+  // resolving multiple TypeScript errors.
+  state: State = { hasError: false };
 
   static getDerivedStateFromError(_: Error): State {
     return { hasError: true };
@@ -43,7 +40,7 @@ class ErrorBoundary extends React.Component<Props, State> {
   }
 
   handleRefresh = () => {
-    this.setState({ hasError: false }, () => window.location.reload());
+    window.location.reload();
   };
 
   render() {

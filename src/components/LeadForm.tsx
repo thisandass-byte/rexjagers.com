@@ -30,12 +30,12 @@ const LeadForm: React.FC = () => {
                         >
                             <CheckCircleIcon className="w-16 h-16 text-gold mx-auto mb-4" />
                             <h3 className="text-2xl font-bold text-navy dark:text-white mb-2">Thank You!</h3>
-                            <p className="text-gray-700 dark:text-slate-light">Your download is on its way. Check your inbox for our latest white paper.</p>
+                            <p className="text-navy dark:text-slate-light">Your download is on its way. Check your inbox for our latest white paper.</p>
                         </motion.div>
                     ) : (
                         <>
                             <SectionTitle>Get Our Latest White Paper</SectionTitle>
-                            <p className="mt-4 max-w-2xl mx-auto mb-8 text-gray-700 dark:text-slate-light">
+                            <p className="mt-4 max-w-2xl mx-auto mb-8 text-navy dark:text-slate-light">
                                 "The Future of Leadership: Navigating the C-Suite in the AI Era"
                             </p>
                             <form onSubmit={handleSubmit} className="flex flex-col sm:flex-row justify-center items-center gap-4 max-w-lg mx-auto">

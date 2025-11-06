@@ -27,7 +27,7 @@ const InsightArticle: React.FC = () => {
             {/* Article Header */}
             <section className="relative h-[50vh] min-h-[400px] flex items-end justify-center text-center p-6 text-white">
                 <img src={article.image} alt={article.title} className="absolute inset-0 w-full h-full object-cover" />
-                <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/50 to-transparent"></div>
+                <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-black/30 to-transparent"></div>
                 <motion.div 
                     className="relative z-10 max-w-4xl mx-auto"
                     initial={{ opacity: 0, y: 20 }}
@@ -50,9 +50,8 @@ const InsightArticle: React.FC = () => {
                                 <motion.span className="inline-block" whileHover={{ x: -5 }}><ChevronLeftIcon className="w-5 h-5 mr-1" /></motion.span> Back to Insights
                             </Link>
                         </div>
-                        {/* FIX: Use dangerouslySetInnerHTML to render the HTML string from article.content */}
                         <article 
-                           className="prose lg:prose-xl dark:prose-invert max-w-none"
+                           className="prose lg:prose-xl dark:dark:prose-invert max-w-none"
                            dangerouslySetInnerHTML={{ __html: article.content }}
                         />
                     </div>

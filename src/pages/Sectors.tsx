@@ -43,7 +43,7 @@ const Sectors: React.FC = () => {
                 </div>
                 <div className="md:w-1/2">
                   <h2 className="text-3xl font-serif text-gold mb-3">{sector.name}</h2>
-                  <p className="leading-relaxed text-gray-700 dark:text-slate-light">
+                  <p className="leading-relaxed text-navy dark:text-slate-light">
                     {sector.description} We possess a profound understanding of the talent landscape within this vertical. Our dedicated consultants maintain a vast network of senior executives and emerging leaders, enabling us to provide unparalleled market insights and access to the most sought-after professionals in the field.
                   </p>
                 </div>

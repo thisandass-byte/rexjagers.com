@@ -35,10 +35,10 @@ const Logo: React.FC<LogoProps> = ({ className = '', variant = 'default', specia
   const isInverse = variant === 'inverse';
 
   const rexColorClasses = specialHeaderStyle
-    ? 'text-white text-glow-white' // FIX: Was text-navy, now white for visibility on dark hero
+    ? 'text-white text-glow-white'
     : isInverse
-    ? 'text-white' // High-contrast white for other dark backgrounds (footer, etc.)
-    : 'text-deep-navy dark:text-white'; // Deeper navy for light backgrounds, white for dark mode scrolled
+    ? 'text-white'
+    : 'text-navy dark:text-white';
 
   return (
     <motion.div

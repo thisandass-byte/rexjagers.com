@@ -50,7 +50,7 @@ const Candidates: React.FC = () => {
           <div className="text-center">
             <SectionTitle>A Confidential & Strategic Partnership</SectionTitle>
           </div>
-          <div className="space-y-6 leading-relaxed mt-6 text-gray-700 dark:text-slate-light">
+          <div className="space-y-6 leading-relaxed mt-6 text-navy dark:text-slate-light">
             <p>
               At RexJagers, we build long-term relationships with exceptional leaders. We understand that a career move is a significant life decision. As such, we operate with the utmost discretion, providing you with transparent, insightful, and strategic guidance throughout your journey.
             </p>
@@ -61,7 +61,7 @@ const Candidates: React.FC = () => {
 
           <div className="mt-12 p-8 bg-light-slate dark:bg-dark-bg-section border border-navy/15 dark:border-slate/30 rounded-lg">
             <h3 className="text-2xl font-bold text-gold mb-6">Our Commitment to You</h3>
-            <ul className="space-y-5 text-gray-700 dark:text-slate-light">
+            <ul className="space-y-5 text-navy dark:text-slate-light">
               {CANDIDATE_COMMITMENTS.map((item) => (
                 <li key={item.title} className="flex items-start">
                   <CheckCircleIcon className="w-6 h-6 text-gold mr-4 mt-1 flex-shrink-0" />
@@ -75,7 +75,7 @@ const Candidates: React.FC = () => {
 
           <div className="mt-16 text-center">
             <SectionTitle>Join Our Exclusive Network</SectionTitle>
-            <p className="max-w-2xl mx-auto mb-8 mt-4 text-gray-700 dark:text-slate-light">If you are a senior executive or an emerging leader, we invite you to connect with us. Submit your profile to be considered for current and future leadership opportunities.</p>
+            <p className="max-w-2xl mx-auto mb-8 mt-4 text-navy dark:text-slate-light">If you are a senior executive or an emerging leader, we invite you to connect with us. Submit your profile to be considered for current and future leadership opportunities.</p>
             <Link to="/contact?subject=Candidate Profile Submission" className="inline-block px-8 py-4 bg-gold text-navy rounded-md text-lg font-semibold hover:bg-amber-300 transition-all duration-300 transform hover:scale-105 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-gold focus-visible:ring-offset-2 focus-visible:ring-offset-white dark:focus-visible:ring-offset-navy">
               Submit Your Profile
             </Link>

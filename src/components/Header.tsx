@@ -46,8 +46,8 @@ const Header: React.FC = () => {
   const linkColorClasses = onHomepageTop
     ? 'text-white text-glow-white'
     : isTransparent
-    ? 'text-white text-shadow-subtle'
-    : 'text-navy dark:text-white';
+    ? 'text-white text-shadow-subtle' // Default for transparent (other pages)
+    : 'text-navy dark:text-white'; // For scrolled state
   
   // Animation Variants
   const navContainerVariants = {
@@ -80,7 +80,7 @@ const Header: React.FC = () => {
       transition: { type: 'spring', stiffness: 400, damping: 40 }
     },
     visible: { 
-      x: 0,
+      x: 0, 
       opacity: 1,
       transition: { type: 'spring', stiffness: 400, damping: 40 }
     },
@@ -235,30 +235,30 @@ const Header: React.FC = () => {
               animate="visible"
               exit="hidden"
             >
-              <LayoutGroup id="mobile-nav">
-                {NAV_LINKS.map((link) => {
-                  const isActive = location.pathname === link.path;
-                  return (
-                    <motion.div key={link.name} variants={navItemVariants} className="relative w-4/5 max-w-xs">
-                      {isActive && (
-                        <motion.div
-                          layoutId="active-mobile-nav-pill"
-                          className="absolute inset-0 bg-gold rounded-full"
-                          transition={{ type: 'spring', stiffness: 500, damping: 30 }}
-                        />
-                      )}
-                      <NavLink
-                        to={link.path}
-                        onClick={() => setIsOpen(false)}
-                        className={`relative z-10 block w-full rounded-full py-3 text-center text-xl sm:text-2xl font-medium transition-colors duration-300 focus:outline-none focus-visible:ring-2 focus-visible:ring-gold ${
-                            isActive ? 'text-navy' : 'text-navy dark:text-white hover:text-gold'
-                        }`}
-                      >
-                        {link.name}
-                      </NavLink>
-                    </motion.div>
-                  )
-                })}
+             <LayoutGroup id="mobile-nav">
+              {NAV_LINKS.map((link) => {
+                 const isActive = location.pathname === link.path;
+                 return (
+                  <motion.div key={link.name} variants={navItemVariants} className="relative w-4/5 max-w-xs">
+                    {isActive && (
+                      <motion.div
+                        layoutId="active-mobile-nav-pill"
+                        className="absolute inset-0 bg-gold rounded-full"
+                        transition={{ type: 'spring', stiffness: 500, damping: 30 }}
+                      />
+                    )}
+                    <NavLink
+                      to={link.path}
+                      onClick={() => setIsOpen(false)}
+                      className={`relative z-10 block w-full rounded-full py-3 text-center text-xl sm:text-2xl font-medium transition-colors duration-300 focus:outline-none focus-visible:ring-2 focus-visible:ring-gold ${
+                          isActive ? 'text-navy' : 'text-navy dark:text-white hover:text-gold'
+                      }`}
+                    >
+                      {link.name}
+                    </NavLink>
+                  </motion.div>
+                 )
+              })}
               </LayoutGroup>
               <motion.div variants={navItemVariants} className="mt-4">
                 <Link to="/contact" onClick={() => setIsOpen(false)} className="px-6 py-3 border border-gold text-gold text-lg sm:text-xl rounded-md hover:bg-gold hover:text-navy transition-all duration-300 font-semibold">

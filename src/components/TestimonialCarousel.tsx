@@ -41,7 +41,7 @@ const TestimonialCarousel: React.FC = () => {
               aria-live="polite"
               role="region"
             >
-              <p className="italic text-lg text-gray-800 dark:text-slate">"{TESTIMONIALS[currentTestimonial].quote}"</p>
+              <p className="italic text-lg text-navy dark:text-slate">"{TESTIMONIALS[currentTestimonial].quote}"</p>
               <div className="mt-6">
                 <p className="font-bold text-navy dark:text-white text-xl">{TESTIMONIALS[currentTestimonial].name}</p>
                 <p className="text-sm text-gold">{TESTIMONIALS[currentTestimonial].company}</p>

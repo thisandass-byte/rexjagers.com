@@ -23,10 +23,10 @@ const ArticleCard: React.FC<{ article: InsightArticle }> = ({ article }) => (
             </div>
             <div className="p-6 flex flex-col flex-grow">
                 <h3 className="text-xl font-bold leading-tight group-hover:text-gold transition-colors mb-2">{article.title}</h3>
-                <div className="text-sm text-gray-600 dark:text-slate-dark mb-4">
+                <div className="text-sm text-slate-dark dark:text-slate-dark mb-4">
                     <span>By {article.author}</span> | <span>{article.date}</span>
                 </div>
-                <p className="text-sm flex-grow text-gray-700 dark:text-slate-light">{article.excerpt}</p>
+                <p className="text-sm flex-grow text-navy dark:text-slate-light">{article.excerpt}</p>
             </div>
         </Link>
     </motion.div>

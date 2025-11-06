@@ -17,7 +17,6 @@
 
 body {
   cursor: none;
-  @apply bg-white text-navy dark:bg-navy dark:text-slate;
 }
 
 ::selection {
@@ -122,7 +121,7 @@ a, button, input, textarea, [role="button"], [data-cursor-hover] {
       @apply list-disc list-inside space-y-2 mb-5;
   }
   .prose p, .prose ul, .prose li {
-      @apply text-gray-700;
+      @apply text-navy;
   }
   .dark .dark\:prose-invert p, .dark .dark\:prose-invert ul, .dark .dark\:prose-invert li {
       @apply text-slate-light;

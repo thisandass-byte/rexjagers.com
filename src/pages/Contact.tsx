@@ -94,14 +94,14 @@ const Contact: React.FC = () => {
           <div className="space-y-8">
             <div>
               <SectionTitle>Get in Touch</SectionTitle>
-              <p className="mt-4 text-gray-700 dark:text-slate-light">
+              <p className="mt-4 text-navy dark:text-slate-light">
                 Whether you are an organization seeking transformative leadership, or a senior executive considering your next career move, we would be delighted to hear from you.
               </p>
             </div>
             <div>
               <h3 className="text-xl font-bold text-gold mb-2">Our Offices</h3>
-              <p className="text-gray-700 dark:text-slate-light">Chennai, India</p>
-              <p className="text-gray-700 dark:text-slate-light">Bangalore, India</p>
+              <p className="text-navy dark:text-slate-light">Chennai, India</p>
+              <p className="text-navy dark:text-slate-light">Bangalore, India</p>
             </div>
             <div>
               <h3 className="text-xl font-bold text-gold mb-2">Email</h3>
@@ -129,7 +129,7 @@ const Contact: React.FC = () => {
                 >
                   <CheckCircleIcon className="w-16 h-16 text-gold mx-auto mb-4" />
                   <h3 className="text-2xl font-bold text-navy dark:text-white mb-2">Thank You!</h3>
-                  <p className="text-gray-700 dark:text-slate-light">Your message has been sent successfully. We will be in touch shortly.</p>
+                  <p className="text-navy dark:text-slate-light">Your message has been sent successfully. We will be in touch shortly.</p>
                 </motion.div>
               ) : (
                 <motion.form

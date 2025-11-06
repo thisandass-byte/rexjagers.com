@@ -48,7 +48,7 @@ const Hero: React.FC = () => {
           type="letter"
           duration={2}
         />
-        <motion.p variants={heroItemVariants} initial="hidden" animate="visible" transition={{delay: 2.2}} className="text-lg md:text-xl max-w-3xl mx-auto text-slate text-shadow-subtle">
+        <motion.p variants={heroItemVariants} initial="hidden" animate="visible" transition={{delay: 2.2}} className="text-lg md:text-xl max-w-3xl mx-auto text-white/90 text-shadow-subtle">
           A premier executive search firm dedicated to appointing visionary leaders who define tomorrow.
         </motion.p>
         <motion.div variants={heroItemVariants} initial="hidden" animate="visible" transition={{delay: 2.4}}>
@@ -57,7 +57,7 @@ const Hero: React.FC = () => {
           </Link>
         </motion.div>
       </div>
-      <ScrollDownIndicator />
+      <ScrollDownIndicator variant="light" />
     </section>
   );
 };

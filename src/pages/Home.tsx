@@ -8,7 +8,6 @@ import AnimatedSection from '../components/AnimatedSection.tsx';
 import SectionTitle from '../components/SectionTitle.tsx';
 import Hero from '../components/Hero.tsx';
 import SectorGrid from '../components/SectorGrid.tsx';
-import TestimonialCarousel from '../components/TestimonialCarousel.tsx';
 import LeadForm from '../components/LeadForm.tsx';
 
 const Home: React.FC = () => {
@@ -38,7 +37,7 @@ const Home: React.FC = () => {
       <AnimatedSection className="py-20 md:py-28 bg-white dark:bg-navy">
         <div className="container mx-auto px-6 text-center">
             <SectionTitle>Defining the Future of Executive Talent</SectionTitle>
-            <p className="max-w-3xl mx-auto mb-8 mt-4 text-gray-700 dark:text-slate">
+            <p className="max-w-3xl mx-auto mb-8 mt-4 text-navy dark:text-slate-light">
                 At RexJagers, we believe that the right leadership is the most critical catalyst for an organization's success. With a bespoke, research-driven approach, we connect our clients with the top 1% of talent, ensuring a perfect alignment of vision, culture, and expertise.
             </p>
             <Link to="/about" className="text-gold font-semibold text-lg hover:underline group flex items-center justify-center rounded-md focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-gold">
@@ -52,7 +51,7 @@ const Home: React.FC = () => {
         <div className="container mx-auto px-6">
           <div className="text-center mb-12">
             <SectionTitle>Our Signature Services</SectionTitle>
-            <p className="mt-4 max-w-2xl mx-auto text-gray-700 dark:text-slate">A comprehensive suite of solutions designed to build and strengthen your leadership foundation.</p>
+            <p className="mt-4 max-w-2xl mx-auto text-navy dark:text-slate-light">A comprehensive suite of solutions designed to build and strengthen your leadership foundation.</p>
           </div>
           <motion.div
             className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8"
@@ -67,7 +66,7 @@ const Home: React.FC = () => {
                 <div className="relative">
                   <service.icon className="h-10 w-10 text-gold mb-4" />
                   <h3 className="text-xl font-bold text-navy dark:text-white mb-2">{service.title}</h3>
-                  <p className="text-gray-700 dark:text-slate-light">{service.description}</p>
+                  <p className="text-navy dark:text-slate-light">{service.description}</p>
                 </div>
               </motion.div>
             ))}
@@ -79,7 +78,6 @@ const Home: React.FC = () => {
       
       <LeadForm />
       
-      <TestimonialCarousel />
     </div>
   );
 };
