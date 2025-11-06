@@ -4,6 +4,7 @@ import { NAV_LINKS } from '../lib/schema.ts';
 import { motion, AnimatePresence, LayoutGroup, Variants } from 'framer-motion';
 import Logo from './Logo.tsx';
 import ThemeToggle from './ThemeToggle.tsx';
+import { ChevronDownIcon } from './Icons.tsx';
 
 const Path = (props: any) => (
   <motion.path
@@ -18,6 +19,7 @@ const Path = (props: any) => (
 const Header: React.FC = () => {
   const [isOpen, setIsOpen] = useState(false);
   const [isScrolled, setIsScrolled] = useState(false);
+  const [openDropdown, setOpenDropdown] = useState<string | null>(null);
   const location = useLocation();
 
   useEffect(() => {
@@ -25,20 +27,18 @@ const Header: React.FC = () => {
       setIsScrolled(window.scrollY > 10);
     };
     window.addEventListener('scroll', handleScroll);
-    handleScroll(); // Call on mount to set initial state correctly
+    handleScroll();
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);
   
   useEffect(() => {
-    if (isOpen) {
-      document.body.style.overflow = 'hidden';
-    } else {
-      document.body.style.overflow = 'auto';
-    }
-    return () => {
-        document.body.style.overflow = 'auto';
-    }
+    document.body.style.overflow = isOpen ? 'hidden' : 'auto';
+    return () => { document.body.style.overflow = 'auto'; }
   }, [isOpen]);
+
+  useEffect(() => {
+    setOpenDropdown(null);
+  }, [location.pathname]);
 
   const isTransparent = !isScrolled;
   const onHomepageTop = location.pathname === '/' && isTransparent;
@@ -46,44 +46,22 @@ const Header: React.FC = () => {
   const linkColorClasses = onHomepageTop
     ? 'text-white text-glow-white'
     : isTransparent
-    ? 'text-white text-shadow-subtle' // Default for transparent (other pages)
-    : 'text-navy dark:text-white'; // For scrolled state
+    ? 'text-white text-shadow-subtle'
+    : 'text-navy dark:text-white';
   
-  // Animation Variants
   const navContainerVariants = {
     hidden: {},
-    visible: {
-      transition: {
-        staggerChildren: 0.08,
-        delayChildren: 0.4,
-      },
-    },
+    visible: { transition: { staggerChildren: 0.08, delayChildren: 0.4 } },
   };
 
   const navItemVariants: Variants = {
     hidden: { y: -20, opacity: 0 },
-    visible: {
-      y: 0,
-      opacity: 1,
-      transition: {
-        type: 'spring',
-        stiffness: 120,
-        damping: 12,
-      },
-    },
+    visible: { y: 0, opacity: 1, transition: { type: 'spring', stiffness: 120, damping: 12 } },
   };
 
   const mobileMenuVariants: Variants = {
-    hidden: { 
-      x: '-100%',
-      opacity: 0,
-      transition: { type: 'spring', stiffness: 400, damping: 40 }
-    },
-    visible: { 
-      x: 0, 
-      opacity: 1,
-      transition: { type: 'spring', stiffness: 400, damping: 40 }
-    },
+    hidden: { x: '-100%', opacity: 0, transition: { type: 'spring', stiffness: 400, damping: 40 } },
+    visible: { x: 0, opacity: 1, transition: { type: 'spring', stiffness: 400, damping: 40 } },
   };
   
   const headerPaddingVariants = {
@@ -98,15 +76,12 @@ const Header: React.FC = () => {
       animate={{ y: 0, opacity: 1 }}
       transition={{ duration: 0.6, ease: 'easeOut' }}
     >
-      {/* Background container for smooth cross-fade */}
       <div className="absolute inset-0 pointer-events-none">
-        {/* Solid/blurred background */}
         <motion.div
           className="h-full bg-white/95 backdrop-blur-xl shadow-lg dark:bg-navy/95 border-b border-slate/20 dark:border-slate/80"
           animate={{ opacity: isScrolled ? 1 : 0 }}
           transition={{ duration: 0.3, ease: 'easeOut' }}
         />
-        {/* Transparent gradient background */}
         <motion.div
           className="h-full bg-gradient-to-b from-black/70 to-transparent backdrop-blur-sm"
           animate={{ opacity: isScrolled ? 0 : 1 }}
@@ -126,7 +101,6 @@ const Header: React.FC = () => {
           </Link>
         </div>
         
-        {/* Desktop Nav */}
         <motion.nav 
           className="hidden lg:flex items-center space-x-6 xl:space-x-8"
           variants={navContainerVariants}
@@ -137,7 +111,14 @@ const Header: React.FC = () => {
             {NAV_LINKS.map((link) => {
               const isActive = location.pathname === link.path;
               return (
-                <motion.div key={link.name} variants={navItemVariants} className="relative">
+                <motion.div
+                  key={link.name}
+                  variants={navItemVariants}
+                  className="relative"
+                  onMouseEnter={() => link.children && setOpenDropdown(link.name)}
+                  onMouseLeave={() => link.children && setOpenDropdown(null)}
+                >
+                  {link.path ? (
                     <NavLink
                       to={link.path}
                       className={`${linkColorClasses} transition-colors duration-300 font-medium rounded-md focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-gold hover:text-gold`}
@@ -151,8 +132,41 @@ const Header: React.FC = () => {
                         />
                       )}
                     </NavLink>
+                  ) : (
+                    <div className={`${linkColorClasses} cursor-default flex items-center transition-colors duration-300 font-medium`}>
+                      {link.name}
+                      <ChevronDownIcon className={`w-4 h-4 ml-1 transition-transform duration-200 ${openDropdown === link.name ? 'rotate-180' : ''}`} />
+                    </div>
+                  )}
+
+                  {link.children && (
+                     <AnimatePresence>
+                      {openDropdown === link.name && (
+                        <motion.div
+                          initial={{ opacity: 0, y: -10, scale: 0.95 }}
+                          animate={{ opacity: 1, y: 0, scale: 1 }}
+                          exit={{ opacity: 0, y: -10, scale: 0.95 }}
+                          transition={{ duration: 0.2, ease: 'easeOut' }}
+                          className="absolute top-full left-1/2 -translate-x-1/2 mt-4 w-48 bg-white/90 dark:bg-navy/90 backdrop-blur-lg rounded-md shadow-xl border border-white/20 dark:border-slate/70"
+                        >
+                          <ul className="py-2">
+                            {link.children.map(childLink => (
+                              <li key={childLink.name}>
+                                <NavLink 
+                                  to={childLink.path} 
+                                  className={({isActive}) => `block w-full px-4 py-2 text-left transition-colors duration-200 text-sm ${isActive ? 'text-gold' : 'text-navy dark:text-white'} hover:bg-gold/10 hover:text-gold`}
+                                >
+                                  {childLink.name}
+                                </NavLink>
+                              </li>
+                            ))}
+                          </ul>
+                        </motion.div>
+                      )}
+                    </AnimatePresence>
+                  )}
                 </motion.div>
-              )
+              );
             })}
           </LayoutGroup>
           <motion.div variants={navItemVariants}>
@@ -165,7 +179,6 @@ const Header: React.FC = () => {
           </motion.div>
         </motion.nav>
 
-        {/* Mobile Nav Toggle */}
         <div className="lg:hidden flex items-center">
           <motion.button 
             onClick={() => setIsOpen(!isOpen)} 
@@ -176,40 +189,15 @@ const Header: React.FC = () => {
             whileTap={{ scale: 0.9 }}
           >
             <span className="sr-only">Toggle menu</span>
-            <motion.svg
-              width="24"
-              height="24"
-              viewBox="0 0 24 24"
-              className="w-6 h-6"
-              animate={isOpen ? "open" : "closed"}
-              initial={false}
-            >
-              <Path
-                variants={{
-                  closed: { d: "M 2 4.5 L 22 4.5" },
-                  open: { d: "M 4 19.5 L 20 2.5" },
-                }}
-              />
-              <Path
-                d="M 2 12 L 22 12"
-                variants={{
-                  closed: { opacity: 1 },
-                  open: { opacity: 0 },
-                }}
-                transition={{ duration: 0.1 }}
-              />
-              <Path
-                variants={{
-                  closed: { d: "M 2 19.5 L 22 19.5" },
-                  open: { d: "M 4 2.5 L 20 19.5" },
-                }}
-              />
+            <motion.svg width="24" height="24" viewBox="0 0 24 24" className="w-6 h-6" animate={isOpen ? "open" : "closed"} initial={false}>
+              <Path variants={{ closed: { d: "M 2 4.5 L 22 4.5" }, open: { d: "M 4 19.5 L 20 2.5" } }}/>
+              <Path d="M 2 12 L 22 12" variants={{ closed: { opacity: 1 }, open: { opacity: 0 } }} transition={{ duration: 0.1 }}/>
+              <Path variants={{ closed: { d: "M 2 19.5 L 22 19.5" }, open: { d: "M 4 2.5 L 20 19.5" } }}/>
             </motion.svg>
           </motion.button>
         </div>
       </motion.div>
       
-      {/* Mobile Menu */}
       <AnimatePresence>
         {isOpen && (
           <motion.div 
@@ -222,21 +210,21 @@ const Header: React.FC = () => {
           >
             <motion.nav 
               className="flex flex-col items-center justify-center h-full space-y-8"
-              variants={{
-                hidden: {},
-                visible: {
-                    transition: {
-                        staggerChildren: 0.08,
-                        delayChildren: 0.2,
-                    },
-                },
-              }}
+              variants={{ visible: { transition: { staggerChildren: 0.08, delayChildren: 0.2 } }}}
               initial="hidden"
               animate="visible"
               exit="hidden"
             >
              <LayoutGroup id="mobile-nav">
-              {NAV_LINKS.map((link) => {
+              {/* FIX: Replaced flatMap with a type-safe reduce to flatten nested navigation links for the mobile menu. This resolves all type errors related to incorrect inference. */}
+              {NAV_LINKS.reduce<Array<{ name: string; path: string }>>((acc, link) => {
+                if (link.children) {
+                  acc.push(...link.children);
+                } else if (link.path) {
+                  acc.push({ name: link.name, path: link.path });
+                }
+                return acc;
+              }, []).map((link) => {
                  const isActive = location.pathname === link.path;
                  return (
                   <motion.div key={link.name} variants={navItemVariants} className="relative w-4/5 max-w-xs">
