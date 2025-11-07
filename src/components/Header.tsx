@@ -44,7 +44,7 @@ const Header: React.FC = () => {
   const onHomepageTop = location.pathname === '/' && isTransparent;
 
   const linkColorClasses = onHomepageTop
-    ? 'text-white text-glow-white'
+    ? 'text-white text-shadow-strong'
     : isTransparent
     ? 'text-white text-shadow-subtle'
     : 'text-navy dark:text-white';

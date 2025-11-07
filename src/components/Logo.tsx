@@ -35,7 +35,7 @@ const Logo: React.FC<LogoProps> = ({ className = '', variant = 'default', specia
   const isInverse = variant === 'inverse';
 
   const rexColorClasses = specialHeaderStyle
-    ? 'text-white text-glow-white'
+    ? 'text-white text-shadow-strong'
     : isInverse
     ? 'text-white'
     : 'text-navy dark:text-white';

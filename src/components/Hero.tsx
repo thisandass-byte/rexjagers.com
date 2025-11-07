@@ -44,11 +44,11 @@ const Hero: React.FC = () => {
         <AnimatedText 
           el="h1" 
           text="Architects of Leadership" 
-          className="text-4xl md:text-6xl lg:text-7xl font-logo font-bold mb-4 tracking-wide text-white text-shadow-subtle"
+          className="text-4xl md:text-6xl lg:text-7xl font-logo font-bold mb-4 tracking-wide text-white text-shadow-strong"
           type="letter"
           duration={2}
         />
-        <motion.p variants={heroItemVariants} initial="hidden" animate="visible" transition={{delay: 2.2}} className="text-lg md:text-xl max-w-3xl mx-auto text-white/90 text-shadow-subtle">
+        <motion.p variants={heroItemVariants} initial="hidden" animate="visible" transition={{delay: 2.2}} className="text-lg md:text-xl max-w-3xl mx-auto text-white/90 text-shadow-strong">
           A premier executive search firm dedicated to appointing visionary leaders who define tomorrow.
         </motion.p>
         <motion.div variants={heroItemVariants} initial="hidden" animate="visible" transition={{delay: 2.4}}>
